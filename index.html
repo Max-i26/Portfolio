@@ -30,7 +30,7 @@
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#terminal" class="nav-link">Terminal</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#sandbox" class="nav-link">Data Sandbox</a></li>
+          <li><a href="#arcade" class="nav-link">Arcade</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -129,77 +129,53 @@
     </div>
   </section>
 
-  <!-- Data Science Sandbox (Interactive Widget) -->
-  <section class="section" id="sandbox">
+  <!-- Data Science Arcade & Game Zone -->
+  <section class="section" id="arcade">
     <div class="section-container">
       <div class="section-header">
-        <span class="section-pretitle">Data Playground</span>
-        <h2 class="section-title">Visual Pre-processing Sandbox</h2>
+        <span class="section-pretitle">Interactive Arcade</span>
+        <h2 class="section-title">Data Collector Retro Game</h2>
       </div>
 
       <div class="sandbox-card">
         <div class="sandbox-container">
           <div class="sandbox-control-panel">
             <div>
-              <h3 class="sandbox-control-title">Mathematical Scaler Engine</h3>
-              <p class="sandbox-control-desc">Select feature engineering algorithms and watch dataset distributions update client-side.</p>
+              <h3 class="sandbox-control-title">Data Collector Console</h3>
+              <p class="sandbox-control-desc">Use arrow keys on your keyboard to navigate the snake, collect data samples (red targets), and train your ML model live.</p>
             </div>
             
             <div class="sandbox-group">
-              <label class="sandbox-label">Transformation Function</label>
-              <select id="sandbox-scaler" class="sandbox-select">
-                <option value="none">Raw Data (Unscaled)</option>
-                <option value="minmax">MinMax Scaler [0, 1]</option>
-                <option value="standard">Standard Scaler (Z-Score)</option>
-              </select>
-            </div>
-
-            <div class="sandbox-group">
-              <label class="sandbox-label">Data Generator Range</label>
-              <div class="sandbox-slider-container">
-                <div class="sandbox-slider-info">
-                  <span>Samples Size</span>
-                  <span id="samples-val">50</span>
-                </div>
-                <input type="range" id="sandbox-samples" class="sandbox-slider" min="10" max="100" value="50">
-              </div>
-            </div>
-
-            <div class="sandbox-group">
-              <label class="sandbox-label">Pipeline Operations</label>
+              <label class="sandbox-label">Model Pipeline Options</label>
               <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                 <label style="font-size: 0.85rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.4rem; cursor: pointer;">
-                  <input type="checkbox" id="sandbox-noise" style="accent-color: var(--accent);"> Inject Gaussian Noise
+                  <input type="checkbox" id="sandbox-noise" style="accent-color: var(--accent);"> Inject Gaussian Noise (Obstacles)
                 </label>
               </div>
             </div>
 
             <button id="run-pipeline-btn" class="sandbox-btn">
-              <i class="fa-solid fa-play"></i> Run Preprocessing Pipeline
-            </button>
-            <button id="toggle-game-btn" class="btn btn-secondary" style="width: 100%; margin-top: 0.75rem;">
-              <i class="fa-solid fa-gamepad"></i> Launch Data Collector Game
+              <i class="fa-solid fa-play"></i> Start New Training Session
             </button>
           </div>
 
           <div class="sandbox-viz-panel">
-            <div class="sandbox-chart-container" id="sandbox-chart-container">
-              <canvas id="sandbox-chart"></canvas>
-              <canvas id="game-canvas" width="400" height="300" style="display: none; background: #05080f; border: 1px solid var(--border-color); border-radius: 8px; width: 100%; height: 300px;"></canvas>
+            <div class="sandbox-chart-container" id="sandbox-chart-container" style="display: flex; justify-content: center; align-items: center;">
+              <canvas id="game-canvas" width="400" height="300" style="background: #05080f; border: 2px solid var(--accent); border-radius: 8px; width: 100%; height: 300px; display: block;"></canvas>
             </div>
 
             <div class="sandbox-metrics">
               <div class="sandbox-metric-card">
-                <div class="sandbox-metric-label">Dataset Mean</div>
-                <div id="metric-mean" class="sandbox-metric-val">0.00</div>
+                <div class="sandbox-metric-label">Data Collected</div>
+                <div id="metric-mean" class="sandbox-metric-val">0 samples</div>
               </div>
               <div class="sandbox-metric-card">
-                <div class="sandbox-metric-label">Std Deviation</div>
-                <div id="metric-std" class="sandbox-metric-val">1.00</div>
+                <div class="sandbox-metric-label">High Score</div>
+                <div id="metric-std" class="sandbox-metric-val">0 samples</div>
               </div>
               <div class="sandbox-metric-card">
-                <div class="sandbox-metric-label">Min / Max Range</div>
-                <div id="metric-range" class="sandbox-metric-val">0.00 / 0.00</div>
+                <div class="sandbox-metric-label">Model Accuracy</div>
+                <div id="metric-range" class="sandbox-metric-val">70.00%</div>
               </div>
             </div>
           </div>
@@ -210,22 +186,16 @@
       <div class="sandbox-math-info">
         <div class="sandbox-math-grid">
           <div class="math-card">
-            <h4 class="math-card-title"><i class="fa-solid fa-calculator"></i> MinMax Scaling</h4>
+            <h4 class="math-card-title"><i class="fa-solid fa-calculator"></i> Active Data Collection</h4>
             <p class="math-card-desc">
-              Linearly transforms feature coordinates to a fixed range, usually [0, 1]. Preserves zero values for sparse data but is highly sensitive to outlier values.
+              In supervised machine learning, models require high-quality annotated samples. Play the game to collect targets and expand the training set.
             </p>
-            <div class="math-formula-box">
-              x<sub>scaled</sub> = (x - x<sub>min</sub>) / (x<sub>max</sub> - x<sub>min</sub>)
-            </div>
           </div>
           <div class="math-card">
-            <h4 class="math-card-title"><i class="fa-solid fa-chart-line"></i> Z-Score Standardization</h4>
+            <h4 class="math-card-title"><i class="fa-solid fa-chart-line"></i> Noise & Generalization</h4>
             <p class="math-card-desc">
-              Rescales coordinates around a mean (&mu;) of 0 with standard deviation (&sigma;) of 1. Standardizes metrics across features with varying units or magnitudes.
+              Checking "Inject Gaussian Noise" generates random obstacle coordinates on the board. Training with noise helps model generalization but increases crash risks!
             </p>
-            <div class="math-formula-box">
-              z = (x - &mu;) / &sigma;
-            </div>
           </div>
         </div>
       </div>
