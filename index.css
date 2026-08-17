@@ -818,6 +818,64 @@ a {
   font-family: var(--font-mono);
 }
 
+/* Preprocessing Sandbox Mathematical Panel */
+.sandbox-math-info {
+  margin-top: 3rem;
+}
+
+.sandbox-math-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.math-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  transition: border-color var(--transition-normal);
+}
+
+.math-card:hover {
+  border-color: var(--accent);
+}
+
+.math-card-title {
+  font-size: 1.15rem;
+  color: var(--accent-light);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.math-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.math-formula-box {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  text-align: center;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .sandbox-math-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ==========================================================================
    Skills Grid Section
    ========================================================================== */

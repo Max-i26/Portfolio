@@ -201,6 +201,30 @@
           </div>
         </div>
       </div>
+
+      <!-- Sandbox Math Info Panel -->
+      <div class="sandbox-math-info">
+        <div class="sandbox-math-grid">
+          <div class="math-card">
+            <h4 class="math-card-title"><i class="fa-solid fa-calculator"></i> MinMax Scaling</h4>
+            <p class="math-card-desc">
+              Linearly transforms feature coordinates to a fixed range, usually [0, 1]. Preserves zero values for sparse data but is highly sensitive to outlier values.
+            </p>
+            <div class="math-formula-box">
+              x<sub>scaled</sub> = (x - x<sub>min</sub>) / (x<sub>max</sub> - x<sub>min</sub>)
+            </div>
+          </div>
+          <div class="math-card">
+            <h4 class="math-card-title"><i class="fa-solid fa-chart-line"></i> Z-Score Standardization</h4>
+            <p class="math-card-desc">
+              Rescales coordinates around a mean (&mu;) of 0 with standard deviation (&sigma;) of 1. Standardizes metrics across features with varying units or magnitudes.
+            </p>
+            <div class="math-formula-box">
+              z = (x - &mu;) / &sigma;
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

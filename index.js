@@ -207,33 +207,58 @@ function initTerminal() {
   }
 
   function executeCommand(cmd, targetFile) {
+    // Normalise command if someone types directory paths directly
+    if (cmd === "projects" || cmd === "projects/") {
+      appendLine("projects/ is a directory. To list its files, type 'ls projects/'.", "terminal-output-line");
+      appendLine("Files inside projects/:");
+      Object.keys(files).forEach(f => {
+        if (f.startsWith("projects/")) {
+          appendLine(`  ${f.replace("projects/", "")}`);
+        }
+      });
+      return;
+    }
+
     switch (cmd) {
       case "help":
         appendLine("Supported system commands:");
         Object.entries(commandList).forEach(([c, d]) => {
           appendLine(`  ${c.padEnd(12)} - ${d}`);
         });
+        appendLine("\nTips: You can inspect directories via 'ls projects/' and open markdown descriptions using 'cat projects/Friday.md'.");
         break;
 
       case "ls":
-        appendLine("Directories and files:");
-        appendLine("  projects/     [Dir]");
-        Object.keys(files).forEach(f => {
-          if (!f.startsWith("projects/")) {
-            appendLine(`  ${f}`);
-          }
-        });
+        if (targetFile === "projects" || targetFile === "projects/") {
+          appendLine("Files in directory projects/:");
+          Object.keys(files).forEach(f => {
+            if (f.startsWith("projects/")) {
+              appendLine(`  ${f.replace("projects/", "")}`);
+            }
+          });
+        } else {
+          appendLine("Directories and files:");
+          appendLine("  projects/     [Dir]");
+          Object.keys(files).forEach(f => {
+            if (!f.startsWith("projects/")) {
+              appendLine(`  ${f}`);
+            }
+          });
+        }
         break;
 
       case "cat":
         if (!targetFile) {
           appendLine("Error: cat requires a file parameter. (e.g. cat about.txt)", "terminal-output-line terminal-output-error");
+        } else if (targetFile === "projects" || targetFile === "projects/") {
+          appendLine("Error: 'projects/' is a directory. Use 'ls projects/' to view contents.", "terminal-output-line terminal-output-error");
         } else if (files[targetFile]) {
           appendLine(files[targetFile]);
         } else if (files[`projects/${targetFile}`]) {
           appendLine(files[`projects/${targetFile}`]);
         } else {
-          appendLine(`Error: file '${targetFile}' not found. Type 'ls' or search in 'projects/' directory.`, "terminal-output-line terminal-output-error");
+          appendLine(`Error: file '${targetFile}' not found.`, "terminal-output-line terminal-output-error");
+          appendLine("Tip: Try 'ls' to see files, or check in projects/ (e.g. 'cat projects/Friday.md').");
         }
         break;
 
@@ -275,7 +300,8 @@ function initTerminal() {
         break;
 
       default:
-        appendLine(`Command '${cmd}' not recognized. Type 'help' for available system instructions.`, "terminal-output-line terminal-output-error");
+        appendLine(`Command '${cmd}' not recognized.`, "terminal-output-line terminal-output-error");
+        appendLine("Tip: Type 'help' for instructions, 'ls' to list files, or 'cat about.txt' to view file contents.");
         break;
     }
   }
