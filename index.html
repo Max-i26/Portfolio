@@ -1,745 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harol Maxilan - Developer</title>
-<style>
-/* Netflix-inspired Global Styles */
-* { 
-  box-sizing: border-box; 
-  margin: 0; 
-  padding: 0; 
-}
-
-body { 
-  font-family: 'Helvetica Neue', Arial, sans-serif; 
-  background-color: #141414; 
-  color: #ffffff; 
-  line-height: 1.6; 
-  overflow-x: hidden;
-}
-
-/* Netflix Header */
-.netflix-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px 60px;
-  background: linear-gradient(180deg, rgba(0,0,0,0.7) 10%, transparent);
-  z-index: 1000;
-  transition: background-color 0.3s ease;
-}
-
-.netflix-header.scrolled {
-  background-color: #141414;
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.logo {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #E50914;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.nav-menu {
-  display: flex;
-  gap: 35px;
-  list-style: none;
-}
-
-.nav-menu a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 400;
-  transition: color 0.3s ease;
-  position: relative;
-}
-
-.nav-menu a:hover {
-  color: #b3b3b3;
-}
-
-.nav-menu a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #E50914;
-  transition: width 0.3s ease;
-}
-
-.nav-menu a:hover::after {
-  width: 100%;
-}
-
-/* Hero Section - Netflix Style */
-.hero-section {
-  height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
-              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23000" width="1200" height="800"/><circle cx="200" cy="200" r="100" fill="%23E50914" opacity="0.1"/><circle cx="800" cy="400" r="150" fill="%23E50914" opacity="0.05"/><circle cx="1000" cy="100" r="80" fill="%23fff" opacity="0.02"/></svg>') center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-}
-
-.hero-content {
-  max-width: 800px;
-  padding: 0 40px;
-}
-
-.hero-title {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-}
-
-.hero-subtitle {
-  font-size: 1.8rem;
-  font-weight: 300;
-  color: #b3b3b3;
-  margin-bottom: 30px;
-}
-
-.hero-description {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 40px;
-  color: #cccccc;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 15px 40px;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.btn-primary {
-  background-color: #E50914;
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #f40612;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background-color: rgba(109, 109, 110, 0.7);
-  color: white;
-  border: 1px solid rgba(255,255,255,0.3);
-}
-
-.btn-secondary:hover {
-  background-color: rgba(109, 109, 110, 0.9);
-  transform: translateY(-2px);
-}
-
-/* Netflix Content Sections */
-.content-section {
-  padding: 80px 60px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #ffffff;
-}
-
-/* Projects - Netflix Row Style */
-.projects-row {
-  position: relative;
-  margin-bottom: 60px;
-}
-
-.projects-container {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 20px 0;
-}
-
-.projects-container::-webkit-scrollbar {
-  display: none;
-}
-
-.project-card {
-  min-width: 300px;
-  background: #222222;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-}
-
-.project-image {
-  width: 100%;
-  height: 200px;
-  background: linear-gradient(135deg, #E50914, #831010);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  color: rgba(255,255,255,0.3);
-}
-
-.project-content {
-  padding: 20px;
-}
-
-.project-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.project-description {
-  color: #b3b3b3;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-/* Skills Section - Netflix Grid */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.skill-item {
-  background: #222222;
-  padding: 30px;
-  border-radius: 8px;
-  text-align: center;
-  transition: transform 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.skill-item:hover {
-  transform: translateY(-10px);
-  border-color: #E50914;
-}
-
-.skill-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #E50914, #831010);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  font-size: 2rem;
-  color: white;
-}
-
-.skill-name {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.skill-level {
-  color: #b3b3b3;
-  font-size: 0.9rem;
-}
-
-.skill-bar {
-  width: 100%;
-  height: 4px;
-  background: #333;
-  border-radius: 2px;
-  margin-top: 15px;
-  overflow: hidden;
-}
-
-.skill-progress {
-  height: 100%;
-  background: #E50914;
-  border-radius: 2px;
-  transition: width 2s ease;
-}
-
-/* About Section */
-.about-content {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.about-image {
-  text-align: center;
-}
-
-.profile-image {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #E50914;
-  box-shadow: 0 0 30px rgba(229, 9, 20, 0.3);
-}
-
-.about-text h3 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #E50914;
-}
-
-.about-text p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #cccccc;
-  margin-bottom: 20px;
-}
-
-/* Contact Section */
-.contact-content {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-.contact-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #ffffff;
-  padding: 30px;
-  background: #222222;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  min-width: 150px;
-}
-
-.contact-link:hover {
-  background: #E50914;
-  transform: translateY(-5px);
-}
-
-.contact-icon {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 15px;
-  background: #E50914;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-}
-
-.contact-link:hover .contact-icon {
-  background: #ffffff;
-  color: #E50914;
-}
-
-/* Footer */
-.footer {
-  background: #000000;
-  padding: 40px 60px;
-  text-align: center;
-  border-top: 1px solid #333;
-}
-
-.footer p {
-  color: #737373;
-  font-size: 0.9rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .netflix-header {
-    padding: 15px 20px;
-  }
-  
-  .nav-menu {
-    gap: 20px;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.3rem;
-  }
-  
-  .content-section {
-    padding: 60px 20px;
-  }
-  
-  .about-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
-  .profile-image {
-    width: 250px;
-    height: 250px;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .contact-links {
-    gap: 20px;
-  }
-}
-
-/* Loading Animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Scroll Indicator */
-.scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #b3b3b3;
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  40% {
-    transform: translateX(-50%) translateY(-10px);
-  }
-  60% {
-    transform: translateX(-50%) translateY(-5px);
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harol Maxilan - Interactive Data Science & Full-Stack Portfolio</title>
+  <meta name="description" content="Portfolio of Harol Maxilan - Data Science undergraduate and Full-Stack Developer. Featuring an interactive terminal shell and client-side data science visual sandbox.">
+  <link rel="stylesheet" href="index.css">
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Chart.js CDN for interactive visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-<!-- Netflix Header -->
-<header class="netflix-header" id="header">
-  <div class="header-content">
-    <div class="logo">Harol Maxilan</div>
-    <nav>
-      <ul class="nav-menu">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- Ambient Orbs for futuristic background depth -->
+  <div class="bg-ambient">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
   </div>
-</header>
 
-<!-- Hero Section -->
-<section class="hero-section">
-  <div class="hero-content">
-    <h1 class="hero-title fade-in">Data Science Developer</h1>
-    <p class="hero-subtitle fade-in">AI & Web Innovation Specialist</p>
-    <p class="hero-description fade-in">
-      Transforming data into insights and building intelligent solutions. 
-      Currently pursuing Data Science at SUSL with expertise in machine learning, 
-      web development, and team leadership.
-    </p>
-    <div class="cta-buttons fade-in">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+  <!-- Header Component -->
+  <header class="header" id="main-header">
+    <div class="header-container">
+      <a href="#" class="logo-link">
+        <span class="logo-symbol">&lt;</span>maxi.ds<span class="logo-symbol">/&gt;</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#terminal" class="nav-link">Terminal</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#sandbox" class="nav-link">Data Sandbox</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
-  </div>
-  <div class="scroll-indicator">
-    <div style="font-size: 1.5rem;">↓</div>
-  </div>
-</section>
+  </header>
 
-<!-- About Section -->
-<section id="about" class="content-section">
-  <h2 class="section-title fade-in">About Me</h2>
-  <div class="about-content fade-in">
-    <div class="about-image">
-      <img src="maxx.jpg" alt="Harol Maxilan" class="profile-image">
-    </div>
-    <div class="about-text">
-      <h3>Hello, I'm Harol from Vavuniya</h3>
-      <p>
-        As a Data Science undergraduate at Sabaragamuwa University of Sri Lanka (SUSL), 
-        I specialize in transforming complex data into actionable insights. My passion lies 
-        in the intersection of data science, artificial intelligence, and web technologies.
-      </p>
-      <p>
-        With proven leadership abilities and a strong foundation in machine learning, 
-        I'm dedicated to solving real-world problems through data-driven solutions. 
-        My goal is to become a leading data scientist who can bridge the gap between 
-        technical innovation and business impact.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Projects Section -->
-<section id="projects" class="content-section">
-  <h2 class="section-title fade-in">Featured Projects</h2>
-  <div class="projects-row fade-in">
-    <div class="projects-container">
-      <div class="project-card">
-        <div class="project-image">🛍️</div>
-        <div class="project-content">
-          <h3 class="project-title">ClothNet</h3>
-          <p class="project-description">
-            B2B Fashion Platform connecting brands and retailers with intelligent 
-            matching algorithms and streamlined transaction processes.
-          </p>
+  <!-- Hero Section -->
+  <section class="hero" id="about">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          Open for Collaboration
+        </div>
+        <h1 class="hero-title">Harol Maxilan</h1>
+        <div class="hero-subtitle">Data Science Undergraduate & Full-Stack Engineer</div>
+        <p class="hero-description">
+          Specializing in machine learning pipelines, full-stack software development, and AI integration. Pursuing a B.Sc. Hons in Data Science at Sabaragamuwa University of Sri Lanka (SUSL) and building smart systems to solve real-world problems.
+        </p>
+        <div class="cta-group">
+          <a href="#terminal" class="btn btn-primary">
+            <i class="fa-solid fa-terminal"></i> Open Interactive Shell
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fa-regular fa-envelope"></i> Let's Talk
+          </a>
         </div>
       </div>
-      
-      <div class="project-card">
-        <div class="project-image">🏥</div>
-        <div class="project-content">
-          <h3 class="project-title">CareCode</h3>
-          <p class="project-description">
-            Futuristic Health Application providing secure medical assistance 
-            with AI-powered diagnostics and patient management systems.
-          </p>
-        </div>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-image">📊</div>
-        <div class="project-content">
-          <h3 class="project-title">Data Analytics Suite</h3>
-          <p class="project-description">
-            Comprehensive data visualization and analysis platform built with 
-            Python and machine learning algorithms for business intelligence.
-          </p>
+      <div class="hero-illustration">
+        <div class="profile-hex-wrap">
+          <div class="profile-hex-inner">
+            <img src="maxx.jpg" alt="Harol Maxilan" class="profile-img">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Skills Section -->
-<section id="skills" class="content-section">
-  <h2 class="section-title fade-in">Technical Skills</h2>
-  <div class="skills-grid fade-in">
-    <div class="skill-item">
-      <div class="skill-icon">🐍</div>
-      <h3 class="skill-name">Python</h3>
-      <p class="skill-level">Advanced Level</p>
-      <div class="skill-bar">
-        <div class="skill-progress" data-width="90%"></div>
+  <!-- Interactive Terminal Section -->
+  <section class="section" id="terminal">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-pretitle">Interactive Environment</span>
+        <h2 class="section-title">Developer Console Shell</h2>
       </div>
-    </div>
-    
-    <div class="skill-item">
-      <div class="skill-icon">🔧</div>
-      <h3 class="skill-name">PHP</h3>
-      <p class="skill-level">Proficient</p>
-      <div class="skill-bar">
-        <div class="skill-progress" data-width="85%"></div>
-      </div>
-    </div>
-    
-    <div class="skill-item">
-      <div class="skill-icon">🤖</div>
-      <h3 class="skill-name">AI/ML</h3>
-      <p class="skill-level">Intermediate+</p>
-      <div class="skill-bar">
-        <div class="skill-progress" data-width="80%"></div>
-      </div>
-    </div>
-    
-    <div class="skill-item">
-      <div class="skill-icon">🌐</div>
-      <h3 class="skill-name">Web Development</h3>
-      <p class="skill-level">Proficient</p>
-      <div class="skill-bar">
-        <div class="skill-progress" data-width="85%"></div>
-      </div>
-    </div>
-    
-    <div class="skill-item">
-      <div class="skill-icon">🗄️</div>
-      <h3 class="skill-name">SQL/MySQL</h3>
-      <p class="skill-level">Intermediate+</p>
-      <div class="skill-bar">
-        <div class="skill-progress" data-width="80%"></div>
-      </div>
-    </div>
-    
-    <div class="skill-item">
-      <div class="skill-icon">👥</div>
-      <h3 class="skill-name">Leadership</h3>
-      <p class="skill-level">Proven Track Record</p>
-      <div class="skill-bar">
-        <div class="skill-progress" data-width="88%"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="content-section">
-  <h2 class="section-title fade-in">Let's Connect</h2>
-  <div class="contact-content fade-in">
-    <p style="font-size: 1.2rem; color: #cccccc; margin-bottom: 20px;">
-      Ready to collaborate on your next data science project or discuss opportunities? 
-      Let's turn your data into insights.
-    </p>
-    
-    <div class="contact-links">
-      <a href="mailto:maxilanharrol@gmail.com" class="contact-link">
-        <div class="contact-icon">✉️</div>
-        <span>Email</span>
-      </a>
       
-      <a href="https://www.linkedin.com/in/harol-maxilan-6b2b16253" target="_blank" class="contact-link">
-        <div class="contact-icon">💼</div>
-        <span>LinkedIn</span>
-      </a>
-      
-      <a href="#" class="contact-link">
-        <div class="contact-icon">💻</div>
-        <span>GitHub</span>
-      </a>
+      <div class="terminal-wrapper">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="terminal-btn terminal-btn-close"></span>
+            <span class="terminal-btn terminal-btn-minimize"></span>
+            <span class="terminal-btn terminal-btn-maximize"></span>
+          </div>
+          <span class="terminal-title">maxi@susl-ds-workspace: ~</span>
+          <span style="width: 50px;"></span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-welcome">
+            <p>Welcome to NovaFolio Interactive Shell (v1.0.4-LTS)</p>
+            <p>Type <span class="terminal-output-success">'help'</span> to see a list of available commands.</p>
+            <br>
+          </div>
+          <div id="terminal-history"></div>
+          <div class="terminal-input-row">
+            <span class="terminal-prompt">maxi@susl-ds:~$</span>
+            <input type="text" id="terminal-input-field" class="terminal-input" autocomplete="off" autofocus>
+            <span class="terminal-cursor" id="terminal-cursor-indicator"></span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer class="footer">
-  <p>&copy; 2025 Harol Maxilan. All rights reserved. • Data Science Developer • Vavuniya, Sri Lanka</p>
-</footer>
+  <!-- Featured Projects Section -->
+  <section class="section" id="projects">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-pretitle">Selected Works</span>
+        <h2 class="section-title">Production Engineering Projects</h2>
+      </div>
 
-<script>
-// Header scroll effect
-window.addEventListener('scroll', () => {
-  const header = document.getElementById('header');
-  if (window.scrollY > 100) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-});
+      <div class="projects-filter-bar">
+        <button class="filter-btn active" data-filter="all">All Repositories</button>
+        <button class="filter-btn" data-filter="aiml">AI / ML / Data Science</button>
+        <button class="filter-btn" data-filter="web">Full-Stack Web</button>
+        <button class="filter-btn" data-filter="system">System Utilities</button>
+      </div>
 
-// Intersection Observer for fade-in animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
+      <div class="projects-grid" id="projects-grid">
+        <!-- Project cards will be injected by JavaScript or parsed dynamically -->
+      </div>
+    </div>
+  </section>
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, observerOptions);
+  <!-- Data Science Sandbox (Interactive Widget) -->
+  <section class="section" id="sandbox">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-pretitle">Data Playground</span>
+        <h2 class="section-title">Visual Pre-processing Sandbox</h2>
+      </div>
 
-// Observe all fade-in elements
-document.querySelectorAll('.fade-in').forEach(el => {
-  observer.observe(el);
-});
+      <div class="sandbox-card">
+        <div class="sandbox-container">
+          <div class="sandbox-control-panel">
+            <div>
+              <h3 class="sandbox-control-title">Mathematical Scaler Engine</h3>
+              <p class="sandbox-control-desc">Select feature engineering algorithms and watch dataset distributions update client-side.</p>
+            </div>
+            
+            <div class="sandbox-group">
+              <label class="sandbox-label">Transformation Function</label>
+              <select id="sandbox-scaler" class="sandbox-select">
+                <option value="none">Raw Data (Unscaled)</option>
+                <option value="minmax">MinMax Scaler [0, 1]</option>
+                <option value="standard">Standard Scaler (Z-Score)</option>
+              </select>
+            </div>
 
-// Animate skill bars when visible
-const skillObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const progressBars = entry.target.querySelectorAll('.skill-progress');
-      progressBars.forEach(bar => {
-        const width = bar.getAttribute('data-width');
-        setTimeout(() => {
-          bar.style.width = width;
-        }, 300);
-      });
-    }
-  });
-}, { threshold: 0.5 });
+            <div class="sandbox-group">
+              <label class="sandbox-label">Data Generator Range</label>
+              <div class="sandbox-slider-container">
+                <div class="sandbox-slider-info">
+                  <span>Samples Size</span>
+                  <span id="samples-val">50</span>
+                </div>
+                <input type="range" id="sandbox-samples" class="sandbox-slider" min="10" max="100" value="50">
+              </div>
+            </div>
 
-document.querySelectorAll('.skills-grid').forEach(el => {
-  skillObserver.observe(el);
-});
+            <div class="sandbox-group">
+              <label class="sandbox-label">Pipeline Operations</label>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <label style="font-size: 0.85rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.4rem; cursor: pointer;">
+                  <input type="checkbox" id="sandbox-noise" style="accent-color: var(--accent);"> Inject Gaussian Noise
+                </label>
+              </div>
+            </div>
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-});
+            <button id="run-pipeline-btn" class="sandbox-btn">
+              <i class="fa-solid fa-play"></i> Run Preprocessing Pipeline
+            </button>
+          </div>
 
-// Add initial fade-in class to elements
-setTimeout(() => {
-  document.querySelectorAll('.hero-content .fade-in').forEach((el, index) => {
-    setTimeout(() => {
-      el.classList.add('visible');
-    }, index * 200);
-  });
-}, 100);
-</script>
+          <div class="sandbox-viz-panel">
+            <div class="sandbox-chart-container">
+              <canvas id="sandbox-chart"></canvas>
+            </div>
 
+            <div class="sandbox-metrics">
+              <div class="sandbox-metric-card">
+                <div class="sandbox-metric-label">Dataset Mean</div>
+                <div id="metric-mean" class="sandbox-metric-val">0.00</div>
+              </div>
+              <div class="sandbox-metric-card">
+                <div class="sandbox-metric-label">Std Deviation</div>
+                <div id="metric-std" class="sandbox-metric-val">1.00</div>
+              </div>
+              <div class="sandbox-metric-card">
+                <div class="sandbox-metric-label">Min / Max Range</div>
+                <div id="metric-range" class="sandbox-metric-val">0.00 / 0.00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Section -->
+  <section class="section" id="skills">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-pretitle">Acquired Competencies</span>
+        <h2 class="section-title">Technical Expertise</h2>
+      </div>
+
+      <div class="skills-wrapper">
+        <!-- Category: Programming Languages -->
+        <div class="skills-category-card">
+          <h3 class="skills-category-title">
+            <i class="fa-solid fa-code skills-category-icon"></i> Languages
+          </h3>
+          <div class="skills-list">
+            <div class="skill-node">
+              <div class="skill-info"><span class="skill-title">Python</span><span class="skill-val">90%</span></div>
+              <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="90%"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-info"><span class="skill-title">PHP</span><span class="skill-val">85%</span></div>
+              <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="85%"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-info"><span class="skill-title">TypeScript / JavaScript</span><span class="skill-val">80%</span></div>
+              <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="80%"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-info"><span class="skill-title">Ballerina</span><span class="skill-val">70%</span></div>
+              <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="70%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: AI & Data Science -->
+        <div class="skills-category-card">
+          <h3 class="skills-category-title">
+            <i class="fa-solid fa-brain skills-category-icon"></i> AI & Data Science
+          </h3>
+          <div class="skills-list">
+            <div class="skill-node">
+              <div class="skill-info"><span class="skill-title">Machine Learning (Scikit-Learn)</span><span class="skill-val">85%</span></div>
+              <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="85%"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-info"><span class="skill-title">Data Profiling & Analysis</span><span class="skill-val">90%</span></div>
+              <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="90%"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-info"><span class="skill-title">Computer Vision (MediaPipe, OpenCV)</span><span class="skill-val">80%</span></div>
+              <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="80%"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-info"><span class="skill-title">LLM Pipelines (Gemini SDK)</span><span class="skill-val">75%</span></div>
+              <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="75%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Web Tech & RDBMS -->
+        <div class="skills-category-card">
+          <h3 class="skills-category-title">
+            <i class="fa-solid fa-layer-group skills-category-icon"></i> Frameworks & DBs
+          </h3>
+          <div class="skills-list">
+            <div class="skill-node">
+              <div class="skill-info"><span class="skill-title">FastAPI / Django</span><span class="skill-val">80%</span></div>
+              <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="80%"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-info"><span class="skill-title">Laravel (PHP)</span><span class="skill-val">75%</span></div>
+              <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="75%"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-info"><span class="skill-title">React / Vite</span><span class="skill-val">85%</span></div>
+              <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="85%"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-info"><span class="skill-title">MySQL / MongoDB</span><span class="skill-val">80%</span></div>
+              <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="80%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-pretitle">Get In Touch</span>
+        <h2 class="section-title">Contact Desk</h2>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-info-panel">
+          <p class="contact-desc">
+            If you are interested in discussing collaboration opportunities, university case analysis competitions, machine learning developments, or simply want to chat, drop me a message.
+          </p>
+
+          <div class="contact-channels">
+            <div class="contact-channel-item">
+              <div class="contact-channel-icon"><i class="fa-regular fa-envelope"></i></div>
+              <div class="contact-channel-details">
+                <span class="contact-channel-label">Email</span>
+                <a href="mailto:maxilanharrol@gmail.com" class="contact-channel-val">maxilanharrol@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-channel-item">
+              <div class="contact-channel-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div class="contact-channel-details">
+                <span class="contact-channel-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/harol-maxilan-6b2b16253" target="_blank" class="contact-channel-val">harol-maxilan-6b2b16253</a>
+              </div>
+            </div>
+            <div class="contact-channel-item">
+              <div class="contact-channel-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-channel-details">
+                <span class="contact-channel-label">Location</span>
+                <span class="contact-channel-val" style="color: var(--text-primary);">Vavuniya, Sri Lanka</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-panel">
+          <form class="contact-form" id="contact-form">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="name" class="form-input-label">Name</label>
+                <input type="text" id="name" class="form-input" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-input-label">Email</label>
+                <input type="email" id="email" class="form-input" placeholder="Your email address" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject" class="form-input-label">Subject</label>
+              <input type="text" id="subject" class="form-input" placeholder="Collaboration, job post, greeting..." required>
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-input-label">Message</label>
+              <textarea id="message" class="form-input form-textarea" placeholder="Write your message here..." required></textarea>
+            </div>
+            
+            <div class="form-feedback" id="form-feedback-message"></div>
+
+            <button type="submit" class="sandbox-btn" style="width: 100%;">
+              <i class="fa-solid fa-paper-plane"></i> Send Secure Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <span style="color: var(--accent);">&lt;</span>maxi.ds<span style="color: var(--accent);">/&gt;</span>
+      </div>
+      <div class="footer-text">
+        &copy; 2026 Harol Maxilan. All Rights Reserved. Built with HTML5 & Vanilla CSS.
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
 </body>
 </html>
