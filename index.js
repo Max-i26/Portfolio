@@ -263,19 +263,40 @@ function initTerminal() {
         break;
 
       case "predict":
-        appendLine("Initializing client-side decision tree pipeline simulation...", "terminal-output-success");
-        appendLine("Step 1: Reading dummy features (50 rows x 4 dims)");
+        appendLine("[SYSTEM] Initializing Exam Pass Predictor Model (Gini Decision Tree)...", "terminal-output-success");
+        appendLine("-------------------------------------------------------------------");
+        appendLine("Task context: Predict the likelihood of Sabaragamuwa University (SUSL) ");
+        appendLine("undergraduates passing their Capstone proposal based on 4 features:");
+        appendLine("  1. Study hours/week (Range: 10 - 60)");
+        appendLine("  2. Library hours/week (Range: 2 - 20)");
+        appendLine("  3. Caffeine intake/day (Range: 0 - 5 cups)");
+        appendLine("  4. Sleep hours/night (Range: 4 - 9)");
+        appendLine("-------------------------------------------------------------------");
+        appendLine("Training model on 120 historical student matrices...");
+        
         setTimeout(() => {
-          appendLine("Step 2: Normalizing sample matrices... [Mean: 0.00 | StdDev: 1.00]");
-        }, 300);
-        setTimeout(() => {
-          appendLine("Step 3: Calculating gini splits & training tree criteria... [Depth: 3]");
-        }, 600);
-        setTimeout(() => {
-          appendLine("Pipeline execution finished successfully!", "terminal-output-success");
-          appendLine(">>> R² Accuracy score: 0.9412 (94.12%)", "terminal-output-success");
+          appendLine("- Preprocessing raw datasets... done.");
+          appendLine("- Calculating Gini Impurity splits... done.");
+          appendLine("- Optimizing decision depth criteria... done.");
           terminalBody.scrollTop = terminalBody.scrollHeight;
-        }, 900);
+        }, 300);
+
+        setTimeout(() => {
+          appendLine("\n>>> Decision Tree trained successfully!", "terminal-output-success");
+          appendLine(">>> R² Accuracy score: 0.9412 (94.12%)", "terminal-output-success");
+          appendLine("\nFeature Importance Weights:");
+          appendLine("  - Study hours/week      : 48% (Highest influence)");
+          appendLine("  - Sleep hours/night     : 28% (Critical recovery index)");
+          appendLine("  - Caffeine intake/day   : 14% (Alertness factor)");
+          appendLine("  - Library hours/week    : 10% (Reference resource usage)");
+          appendLine("\nPrediction Inference Rules:");
+          appendLine("  IF (Study Hours > 25/week) AND (Sleep > 6 hours/night) --> 98% PASS probability.");
+          appendLine("  IF (Study Hours < 15/week) AND (Sleep < 5 hours/night) --> 22% FAIL/RE-ATTEMPT risk.");
+          appendLine("\nWhy is this used?");
+          appendLine("Predictive modeling is used by academic advisors to identify 'at-risk' students");
+          appendLine("early in the semester and recommend study adjustments before the final capstone proposal.");
+          terminalBody.scrollTop = terminalBody.scrollHeight;
+        }, 700);
         break;
 
       case "stats":
@@ -459,6 +480,214 @@ function initSandbox() {
     });
   }
 
+  // --- Retro Game Integration ---
+  const toggleGameBtn = document.getElementById("toggle-game-btn");
+  const gameCanvas = document.getElementById("game-canvas");
+  const chartCanvas = document.getElementById("sandbox-chart");
+  
+  let gameActive = false;
+  let gameInterval = null;
+  let snake = [];
+  let food = {};
+  let dx = 10;
+  let dy = 0;
+  let score = 0;
+  let highScore = 0;
+  const gridScale = 10;
+  const canvasWidth = 400;
+  const canvasHeight = 300;
+
+  function toggleGameMode() {
+    gameActive = !gameActive;
+    if (gameActive) {
+      chartCanvas.style.display = "none";
+      gameCanvas.style.display = "block";
+      toggleGameBtn.innerHTML = `<i class="fa-solid fa-square-poll-vertical"></i> Exit Game & Show Math Chart`;
+      runBtn.disabled = true;
+      scalerSelect.disabled = true;
+      samplesSlider.disabled = true;
+      startGame();
+    } else {
+      stopGame();
+      gameCanvas.style.display = "none";
+      chartCanvas.style.display = "block";
+      toggleGameBtn.innerHTML = `<i class="fa-solid fa-gamepad"></i> Launch Data Collector Game`;
+      runBtn.disabled = false;
+      scalerSelect.disabled = false;
+      samplesSlider.disabled = false;
+      resetMetricsLabels();
+      runPipeline();
+    }
+  }
+
+  function startGame() {
+    score = 0;
+    snake = [
+      { x: 150, y: 150 },
+      { x: 140, y: 150 },
+      { x: 130, y: 150 },
+      { x: 120, y: 150 }
+    ];
+    dx = 10;
+    dy = 0;
+    spawnFood();
+    updateGameScorecard();
+    
+    if (gameInterval) clearInterval(gameInterval);
+    gameInterval = setInterval(gameLoop, 100);
+    
+    // Bind keys
+    window.addEventListener("keydown", handleGameKeys);
+  }
+
+  function stopGame() {
+    if (gameInterval) clearInterval(gameInterval);
+    window.removeEventListener("keydown", handleGameKeys);
+  }
+
+  function spawnFood() {
+    food.x = Math.floor(Math.random() * (canvasWidth / gridScale)) * gridScale;
+    food.y = Math.floor(Math.random() * (canvasHeight / gridScale)) * gridScale;
+    // Make sure food is not on snake
+    snake.forEach(part => {
+      if (part.x === food.x && part.y === food.y) spawnFood();
+    });
+  }
+
+  function gameLoop() {
+    if (hasGameEnded()) {
+      stopGame();
+      // Visual feedback
+      const ctx = gameCanvas.getContext("2d");
+      ctx.fillStyle = "rgba(5, 8, 15, 0.85)";
+      ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+      ctx.fillStyle = "#ef4444";
+      ctx.font = "bold 16px 'Fira Code', monospace";
+      ctx.textAlign = "center";
+      ctx.fillText("MODEL CRASHED (Game Over)", canvasWidth / 2, canvasHeight / 2 - 10);
+      ctx.fillStyle = "#f3f4f6";
+      ctx.font = "13px 'Inter', sans-serif";
+      const trainedAcc = (70 + score * 1.5).toFixed(2);
+      ctx.fillText(`Trained on ${score} samples. Accuracy: ${Math.min(trainedAcc, 99.9)}%`, canvasWidth / 2, canvasHeight / 2 + 20);
+      ctx.fillText("Press Space to retrain", canvasWidth / 2, canvasHeight / 2 + 50);
+      return;
+    }
+
+    clearCanvas();
+    drawFood();
+    moveSnake();
+    drawSnake();
+  }
+
+  function clearCanvas() {
+    const ctx = gameCanvas.getContext("2d");
+    ctx.fillStyle = "#05080f";
+    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+  }
+
+  function drawSnake() {
+    const ctx = gameCanvas.getContext("2d");
+    snake.forEach((part, index) => {
+      ctx.fillStyle = index === 0 ? "#10b981" : "#059669";
+      ctx.strokeStyle = "#080d16";
+      ctx.fillRect(part.x, part.y, gridScale, gridScale);
+      ctx.strokeRect(part.x, part.y, gridScale, gridScale);
+    });
+  }
+
+  function moveSnake() {
+    const head = { x: snake[0].x + dx, y: snake[0].y + dy };
+    snake.unshift(head);
+
+    const hasEatenFood = snake[0].x === food.x && snake[0].y === food.y;
+    if (hasEatenFood) {
+      score++;
+      if (score > highScore) highScore = score;
+      spawnFood();
+      updateGameScorecard();
+    } else {
+      snake.pop();
+    }
+  }
+
+  function hasGameEnded() {
+    for (let i = 4; i < snake.length; i++) {
+      if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true;
+    }
+    const hitLeftWall = snake[0].x < 0;
+    const hitRightWall = snake[0].x >= canvasWidth;
+    const hitToptWall = snake[0].y < 0;
+    const hitBottomWall = snake[0].y >= canvasHeight;
+    return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall;
+  }
+
+  function drawFood() {
+    const ctx = gameCanvas.getContext("2d");
+    ctx.fillStyle = "#ef4444";
+    ctx.beginPath();
+    ctx.arc(food.x + gridScale / 2, food.y + gridScale / 2, gridScale / 2 - 1, 0, 2 * Math.PI);
+    ctx.fill();
+  }
+
+  function handleGameKeys(e) {
+    if (!gameActive) return;
+    
+    // Prevent scrolling
+    if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Space", " "].includes(e.key)) {
+      e.preventDefault();
+    }
+
+    if ((e.key === "Space" || e.key === " ") && hasGameEnded()) {
+      startGame();
+      return;
+    }
+
+    const goingUp = dy === -gridScale;
+    const goingDown = dy === gridScale;
+    const goingRight = dx === gridScale;
+    const goingLeft = dx === -gridScale;
+
+    switch (e.key) {
+      case "ArrowLeft":
+        if (!goingRight) { dx = -gridScale; dy = 0; }
+        break;
+      case "ArrowUp":
+        if (!goingDown) { dx = 0; dy = -gridScale; }
+        break;
+      case "ArrowRight":
+        if (!goingLeft) { dx = gridScale; dy = 0; }
+        break;
+      case "ArrowDown":
+        if (!goingUp) { dx = 0; dy = gridScale; }
+        break;
+    }
+  }
+
+  function updateGameScorecard() {
+    const labelMean = document.querySelector(".sandbox-metrics .sandbox-metric-card:nth-child(1) .sandbox-metric-label");
+    const labelStd = document.querySelector(".sandbox-metrics .sandbox-metric-card:nth-child(2) .sandbox-metric-label");
+    const labelRange = document.querySelector(".sandbox-metrics .sandbox-metric-card:nth-child(3) .sandbox-metric-label");
+    
+    labelMean.textContent = "Data Collected";
+    labelStd.textContent = "High Score";
+    labelRange.textContent = "Model Accuracy";
+    
+    metricMean.textContent = `${score} samples`;
+    metricStd.textContent = `${highScore} samples`;
+    const accVal = (70 + score * 1.5).toFixed(2);
+    metricRange.textContent = `${Math.min(accVal, 99.90)}%`;
+  }
+
+  function resetMetricsLabels() {
+    const labelMean = document.querySelector(".sandbox-metrics .sandbox-metric-card:nth-child(1) .sandbox-metric-label");
+    const labelStd = document.querySelector(".sandbox-metrics .sandbox-metric-card:nth-child(2) .sandbox-metric-label");
+    const labelRange = document.querySelector(".sandbox-metrics .sandbox-metric-card:nth-child(3) .sandbox-metric-label");
+    
+    labelMean.textContent = "Dataset Mean";
+    labelStd.textContent = "Std Deviation";
+    labelRange.textContent = "Min / Max Range";
+  }
+
   // Update slider displays live
   samplesSlider.addEventListener("input", () => {
     samplesVal.textContent = samplesSlider.value;
@@ -467,6 +696,7 @@ function initSandbox() {
   // Action listeners
   runBtn.addEventListener("click", runPipeline);
   scalerSelect.addEventListener("change", runPipeline);
+  toggleGameBtn.addEventListener("click", toggleGameMode);
 
   // Run pipeline initially on page load
   runPipeline();

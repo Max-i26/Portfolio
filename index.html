@@ -177,11 +177,15 @@
             <button id="run-pipeline-btn" class="sandbox-btn">
               <i class="fa-solid fa-play"></i> Run Preprocessing Pipeline
             </button>
+            <button id="toggle-game-btn" class="btn btn-secondary" style="width: 100%; margin-top: 0.75rem;">
+              <i class="fa-solid fa-gamepad"></i> Launch Data Collector Game
+            </button>
           </div>
 
           <div class="sandbox-viz-panel">
-            <div class="sandbox-chart-container">
+            <div class="sandbox-chart-container" id="sandbox-chart-container">
               <canvas id="sandbox-chart"></canvas>
+              <canvas id="game-canvas" width="400" height="300" style="display: none; background: #05080f; border: 1px solid var(--border-color); border-radius: 8px; width: 100%; height: 300px;"></canvas>
             </div>
 
             <div class="sandbox-metrics">
