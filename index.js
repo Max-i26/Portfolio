@@ -17,76 +17,31 @@
      ========================================================================== */
   const PROJECTS_DATA = [
     {
-      title: "Friday — No-Code ML Pipeline",
+      title: "Friday — Automated ML Pipeline",
       category: "aiml",
-      description: "Full-stack application designed to automate dataset profiling, preprocessing, model training (Scikit-Learn), and visual assessment utilizing a Gemini 3.5 AI tutor interface.",
-      tech: ["FastAPI", "Python", "Scikit-Learn", "Gemini SDK", "JavaScript"],
+      description: "Automated machine learning pipeline for dataset profiling, preprocessing, and model training (Scikit-Learn) with an interactive tutor interface.",
+      tech: ["Python", "Scikit-Learn", "FastAPI", "Gemini SDK", "JavaScript"],
       github: "https://github.com/Max-i26/Friday",
       live: "#",
       icon: "fa-robot"
     },
     {
-      title: "NEXLAB — Smart Booking Platform",
-      category: "web",
-      description: "SAB University booking utility running automated request scoring, round-robin time division, waitlist auto-promotion, and rolling demand prediction engines.",
-      tech: ["PHP", "MySQL", "JavaScript", "PHPMailer", "Tailwind CSS"],
-      github: "https://github.com/sankajithdjinasena/NEXLAB",
-      live: "#",
-      icon: "fa-school"
-    },
-    {
-      title: "RealityFrame — Web CV & AR Hub",
-      category: "aiml",
-      description: "Hardware-accelerated computer vision webcam interface with palm gesture recognition, invisibility filter, holographic wireframes, and Three.js 3D renderings.",
-      tech: ["React", "TypeScript", "Three.js", "MediaPipe", "Vite"],
-      github: "https://github.com/Max-i26/Reality-Spec",
-      live: "#",
-      icon: "fa-vr-cardboard"
-    },
-    {
-      title: "StealthDrop — Decoy Message Site",
+      title: "StealthDrop — Secure Vault",
       category: "system",
-      description: "Decoy front website housing a password-locked secure text vault running multi-format base encoding, QR codes, and 3-strike self-destruct key protection.",
+      description: "Decoy text vault utility supporting multi-format base encoding, QR code generations, and security self-destruct mechanisms.",
       tech: ["TypeScript", "HTML5", "CSS3", "Web Crypto API"],
       github: "https://github.com/Max-i26/StealthDrop",
       live: "#",
       icon: "fa-user-secret"
     },
     {
-      title: "Predictra — Capstone Success Predictor",
-      category: "aiml",
-      description: "Predictive decision tree pipeline analyzing Sabaragamuwa University undergraduate academic parameters (study hours, caffeine, sleep) to forecast capstone proposal success rates.",
-      tech: ["Python", "Scikit-Learn", "FastAPI", "Pandas", "Matplotlib"],
-      github: "https://github.com/Max-i26/Predictra",
+      title: "CARE-CODE — Hospital System",
+      category: "web",
+      description: "Centralized patients and hospital system managing records, appointments, doctor availability, and database profiles.",
+      tech: ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3"],
+      github: "https://github.com/Max-i26/CARE-CODE",
       live: "#",
-      icon: "fa-graduation-cap"
-    },
-    {
-      title: "SentiScribe — Live Lecture Sentiment Analyzer",
-      category: "aiml",
-      description: "Speech-to-text and NLP pipeline parsing live lecture audio to map student engagement and emotional feedback on real-time visual dashboards.",
-      tech: ["Python", "PyTorch", "Transformers", "FastAPI", "WebSockets"],
-      github: "https://github.com/Max-i26/SentiScribe",
-      live: "#",
-      icon: "fa-face-smile"
-    },
-    {
-      title: "SUSL-Navigator — Campus Routing API & Map",
-      category: "system",
-      description: "Dijkstra-based pathfinding microservice mapping Sabaragamuwa University buildings, classrooms, and labs with Ballerina service definitions.",
-      tech: ["Ballerina", "Docker", "REST API", "Leaflet.js"],
-      github: "https://github.com/Max-i26/susl-navigator",
-      live: "#",
-      icon: "fa-map-location-dot"
-    },
-    {
-      title: "Pocket Dictionary API & Glass UI",
-      category: "system",
-      description: "Synonym and translation microservice using native Ballerina mapping protocols coupled to a sleek glassmorphic client interface.",
-      tech: ["Ballerina", "CORS", "JSON Mapping", "JavaScript", "CSS3"],
-      github: "https://github.com/Yosa03-dat/iwb25-039-team-syndicate",
-      live: "#",
-      icon: "fa-book-open"
+      icon: "fa-hospital"
     },
     {
       title: "ClothNet — B2B Apparel Marketplace",
@@ -96,6 +51,42 @@
       github: "https://github.com/Max-i26/ClothNet",
       live: "#",
       icon: "fa-shirt"
+    },
+    {
+      title: "NLP-Emotion-Detection — OpenCV",
+      category: "aiml",
+      description: "Natural Language Processing (NLP) models designed to classify textual input emotions, paired with OpenCV real-time video modules.",
+      tech: ["Python", "OpenCV", "NLTK", "Scikit-Learn", "Flask"],
+      github: "https://github.com/Max-i26/NLP-Emotion-Detection",
+      live: "#",
+      icon: "fa-brain"
+    },
+    {
+      title: "f1-analytics — Bahrain GP Analysis",
+      category: "aiml",
+      description: "Exploratory data analysis of the 2024 Bahrain Grand Prix race parameters, lap timings, driver performance, and tire strategies.",
+      tech: ["Python", "Pandas", "Matplotlib", "Seaborn", "Jupyter"],
+      github: "https://github.com/Max-i26/f1-analytics",
+      live: "#",
+      icon: "fa-car-side"
+    },
+    {
+      title: "Reality-Spec — Interactive Specs",
+      category: "system",
+      description: "An interactive, fun web project showcasing computer vision controls, interactive assets, and real-time frontend scripting.",
+      tech: ["JavaScript", "HTML5", "CSS3", "Three.js"],
+      github: "https://github.com/Max-i26/Reality-Spec",
+      live: "#",
+      icon: "fa-vr-cardboard"
+    },
+    {
+      title: "Health-Analytics — Risk Prediction",
+      category: "aiml",
+      description: "A machine learning approach for patient risk factor prediction using classified medical datasets and data analytics dashboards.",
+      tech: ["Python", "Scikit-Learn", "Pandas", "Streamlit", "NumPy"],
+      github: "https://github.com/Max-i26/Health-Analytics",
+      live: "#",
+      icon: "fa-heart-pulse"
     }
   ];
   
@@ -641,22 +632,35 @@ function initArcade() {
       const submitBtn = form.querySelector("button[type='submit']");
       const originalText = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Directing to Email...`;
+      submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Sending message...`;
   
-      setTimeout(() => {
+      fetch("https://formsubmit.co/ajax/maxilanharrol@gmail.com", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          subject: subject,
+          message: msg
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
-        
-        // Dynamic mailto redirection
-        const mailtoUrl = `mailto:maxilanharrol@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + msg)}`;
-        window.location.href = mailtoUrl;
-        
-        // Success feedback animation
         feedback.classList.add("success");
-        feedback.innerHTML = `<i class="fa-regular fa-circle-check"></i> Redirecting to your email client to send the message.`;
-        
+        feedback.innerHTML = `<i class="fa-regular fa-circle-check"></i> Message sent successfully! Please check your email inbox to verify FormSubmit activation if this is your first submission.`;
         form.reset();
-      }, 1200);
+      })
+      .catch(error => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        feedback.classList.add("error");
+        feedback.textContent = "Network error. Please email maxilanharrol@gmail.com directly.";
+      });
     });
   }
   
