@@ -116,7 +116,7 @@
   
       filtered.forEach(proj => {
         const card = document.createElement("div");
-        card.className = "project-card";
+        card.className = "project-card reveal-element";
         
         const techTags = proj.tech.map(t => `<li class="project-tech-tag">${t}</li>`).join("");
         
@@ -138,6 +138,7 @@
         `;
         grid.appendChild(card);
       });
+      observeNewReveals();
     }
   
     filterButtons.forEach(btn => {
@@ -559,6 +560,8 @@ function initArcade() {
   /* ==========================================================================
      Scroll Trigger Observers (Entry Animations & Skill grow)
      ========================================================================== */
+  let revealObserver;
+
   function initScrollObservers() {
     // Glow progress bars when the skills section goes into viewport
     const skillsGrid = document.querySelector(".skills-wrapper");
@@ -579,6 +582,34 @@ function initArcade() {
       
       observer.observe(skillsGrid);
     }
+
+    // Scroll Reveal Observers (Up & Down scroll animations)
+    const revealElements = document.querySelectorAll(".reveal-element");
+    
+    revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+        } else {
+          // Remove transition class if scrolling up past elements to allow re-triggering
+          if (entry.boundingClientRect.top > 0) {
+            entry.target.classList.remove("revealed");
+          }
+        }
+      });
+    }, {
+      threshold: 0.05,
+      rootMargin: "0px 0px -40px 0px"
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  }
+
+  // Helper to register new reveal targets dynamically (like after project filter runs)
+  function observeNewReveals() {
+    if (!revealObserver) return;
+    const revealElements = document.querySelectorAll(".reveal-element:not(.revealed)");
+    revealElements.forEach(el => revealObserver.observe(el));
   }
   
   /* ==========================================================================

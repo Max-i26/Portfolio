@@ -110,6 +110,22 @@
      pointer-events: none;
    }
    
+   .bg-ambient::after {
+     content: "";
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-image: url('maxx_hero.png');
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: contain;
+     opacity: 0.18; /* Semi-transparent fixed watermark */
+     z-index: -1;
+     pointer-events: none;
+   }
+   
    .ambient-orb {
      position: absolute;
      border-radius: 50%;
@@ -253,22 +269,18 @@
      background-color: #000000;
    }
    
-   /* Background watermark/figure image overlay */
-   .hero::after {
-     content: "";
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background-image: url('maxx_hero.png');
-     background-repeat: no-repeat;
-     background-position: center;
-     background-size: contain;
-     opacity: 0.35; /* Faded watermark appearance */
-     z-index: 1;
-     pointer-events: none;
-   }
+     /* Scroll Reveal Animations */
+    .reveal-element {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1), transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+      will-change: opacity, transform;
+    }
+    
+    .reveal-element.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
    
    .hero-container.hero-centered {
      display: flex;
