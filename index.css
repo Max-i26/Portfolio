@@ -237,9 +237,7 @@
      color: var(--text-primary);
      font-size: 1.5rem;
      cursor: pointer;
-   }
-   
-   /* ==========================================================================
+/* ==========================================================================
       Hero Section
       ========================================================================== */
    .hero {
@@ -253,61 +251,83 @@
      background-color: #000000;
    }
    
+   /* Background watermark/figure image overlay */
+   .hero::after {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-image: url('maxx_hero.png');
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: contain;
+     opacity: 0.35; /* Faded watermark appearance */
+     z-index: 1;
+     pointer-events: none;
+   }
+   
    .hero-container.hero-centered {
      display: flex;
      flex-direction: column;
      align-items: center;
      justify-content: center;
      width: 100%;
-     text-align: center;
-   }
-   
-   .hero-showcase {
-     width: 100%;
-     max-width: 900px;
+     max-width: var(--max-width);
      margin: 0 auto;
+     padding: 0 2rem;
+     text-align: center;
      position: relative;
-     display: flex;
-     justify-content: center;
+     z-index: 2; /* Sits above the background figure */
+   }
+   
+   .hero-badge {
+     display: inline-flex;
      align-items: center;
-     overflow: hidden;
-   }
-   
-   .hero-showcase-img {
-     width: 100%;
-     height: auto;
-     object-fit: contain;
-     display: block;
-     transition: transform var(--transition-slow);
-   }
-   
-   .hero-showcase:hover .hero-showcase-img {
-     transform: scale(1.01);
-   }
-   
-   .hero-subtext-row {
-     display: flex;
-     justify-content: space-between;
-     width: 100%;
-     max-width: 900px;
-     margin-top: 2rem;
-     margin-bottom: 3rem;
+     gap: 0.5rem;
+     background: rgba(212, 175, 55, 0.1);
+     border: 1px solid rgba(212, 175, 55, 0.2);
+     color: var(--accent);
+     padding: 0.4rem 1rem;
+     border-radius: 9999px;
      font-size: 0.85rem;
-     color: var(--text-secondary);
+     font-weight: 500;
+     margin-bottom: 2rem;
+   }
+   
+   .hero-badge-dot {
+     width: 8px;
+     height: 8px;
+     background-color: var(--accent);
+     border-radius: 50%;
+     box-shadow: 0 0 8px var(--accent);
+   }
+   
+   .hero-title {
+     font-size: 4rem;
+     line-height: 1.1;
+     margin-bottom: 1.5rem;
+     color: var(--text-primary);
      font-family: var(--font-heading);
-     letter-spacing: 0.1em;
-     text-transform: uppercase;
-     border-top: 1px solid rgba(212, 175, 55, 0.15);
-     padding-top: 1.5rem;
-     gap: 2rem;
+     letter-spacing: -0.02em;
    }
    
-   .hero-subtext-left {
-     text-align: left;
+   .hero-subtitle {
+     font-size: 1.5rem;
+     font-weight: 400;
+     color: var(--accent-light);
+     margin-bottom: 2rem;
+     font-family: var(--font-heading);
+     letter-spacing: 0.05em;
    }
    
-   .hero-subtext-right {
-     text-align: right;
+   .hero-description {
+     font-size: 1.05rem;
+     color: var(--text-secondary);
+     margin-bottom: 3rem;
+     max-width: 700px;
+     line-height: 1.7;
    }
    
    .hero-cta-centered {
@@ -1161,16 +1181,4 @@
        grid-template-columns: 1fr;
        gap: 1.5rem;
      }
-     
-     .hero-subtext-row {
-       flex-direction: column;
-       gap: 0.75rem;
-       text-align: center;
-       margin-top: 1.5rem;
-       margin-bottom: 2rem;
-     }
-     
-     .hero-subtext-left, .hero-subtext-right {
-       text-align: center;
-     }
-   }
+    }
