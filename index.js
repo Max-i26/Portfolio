@@ -53,22 +53,31 @@
       icon: "fa-user-secret"
     },
     {
-      title: "Pregnify Web — Maternal Care Portal",
-      category: "web",
-      description: "Dedicated patient registration and care portal designed to assist and monitor pregnant mothers with health tracking metrics.",
-      tech: ["Laravel", "Blade", "PHP", "MySQL", "CSS3"],
-      github: "https://github.com/sanodyaJinadasa/Pregnify_Web",
-      live: "#",
-      icon: "fa-baby"
-    },
-    {
-      title: "AUSDAV Connect — Student Association Hub",
-      category: "web",
-      description: "Centralized association portal for All University Students' Development Association Vavuniya with Supabase auth and state synchronization.",
-      tech: ["React", "TypeScript", "Tailwind CSS", "shadcn-ui", "Supabase"],
-      github: "https://github.com/ausdav-org/ausdav",
+      title: "Predictra — Capstone Success Predictor",
+      category: "aiml",
+      description: "Predictive decision tree pipeline analyzing Sabaragamuwa University undergraduate academic parameters (study hours, caffeine, sleep) to forecast capstone proposal success rates.",
+      tech: ["Python", "Scikit-Learn", "FastAPI", "Pandas", "Matplotlib"],
+      github: "https://github.com/Max-i26/Predictra",
       live: "#",
       icon: "fa-graduation-cap"
+    },
+    {
+      title: "SentiScribe — Live Lecture Sentiment Analyzer",
+      category: "aiml",
+      description: "Speech-to-text and NLP pipeline parsing live lecture audio to map student engagement and emotional feedback on real-time visual dashboards.",
+      tech: ["Python", "PyTorch", "Transformers", "FastAPI", "WebSockets"],
+      github: "https://github.com/Max-i26/SentiScribe",
+      live: "#",
+      icon: "fa-face-smile"
+    },
+    {
+      title: "SUSL-Navigator — Campus Routing API & Map",
+      category: "system",
+      description: "Dijkstra-based pathfinding microservice mapping Sabaragamuwa University buildings, classrooms, and labs with Ballerina service definitions.",
+      tech: ["Ballerina", "Docker", "REST API", "Leaflet.js"],
+      github: "https://github.com/Max-i26/susl-navigator",
+      live: "#",
+      icon: "fa-map-location-dot"
     },
     {
       title: "Pocket Dictionary API & Glass UI",
@@ -597,22 +606,26 @@ function initArcade() {
         return;
       }
   
-      // Mock pipeline submission loader
+      // Submission loader
       const submitBtn = form.querySelector("button[type='submit']");
       const originalText = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Processing Secure Pipeline...`;
+      submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Directing to Email...`;
   
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
         
+        // Dynamic mailto redirection
+        const mailtoUrl = `mailto:maxilanharrol@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + msg)}`;
+        window.location.href = mailtoUrl;
+        
         // Success feedback animation
         feedback.classList.add("success");
-        feedback.innerHTML = `<i class="fa-regular fa-circle-check"></i> Hello ${name}! Your secure message has been validated and queued for delivery. Thanks for reaching out.`;
+        feedback.innerHTML = `<i class="fa-regular fa-circle-check"></i> Redirecting to your email client to send the message.`;
         
         form.reset();
-      }, 1500);
+      }, 1200);
     });
   }
   
