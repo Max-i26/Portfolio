@@ -105,7 +105,7 @@ const Hero: React.FC = () => {
         {/* Action Buttons */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-6 w-full max-w-md sm:max-w-none mx-auto"
+          className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full max-w-2xl sm:max-w-none mx-auto"
         >
           <a
             href="#works"
@@ -113,31 +113,42 @@ const Hero: React.FC = () => {
               e.preventDefault();
               document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="btn-shine inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-moonstone-border text-moonstone font-bold text-base sm:text-lg bg-transparent hover:bg-white hover:text-zinc-950 transition-all duration-300 shadow-[0_0_20px_rgba(224,231,255,0.15)]"
+            className="btn-shine inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-moonstone-border text-moonstone font-bold text-sm sm:text-base bg-transparent hover:bg-white hover:text-zinc-950 transition-all duration-300 shadow-[0_0_20px_rgba(224,231,255,0.15)]"
           >
             Explore My Projects
             <ArrowRight className="w-4 h-4" />
           </a>
 
           <a
-            href={socials.github}
+            href={getAssetPath("/Maxilan_AI_ML_CV.pdf")}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-shine inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white/90 font-bold text-base sm:text-lg bg-white/5 hover:bg-white hover:text-zinc-950 transition-all duration-300"
+            download="Maxilan_AI_ML_CV.pdf"
+            className="btn-shine inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-white/20 text-white/90 font-bold text-sm sm:text-base bg-white/5 hover:bg-white hover:text-zinc-950 transition-all duration-300"
           >
-            <Terminal className="w-4 h-4" />
-            View GitHub
+            <FileText className="w-4 h-4 text-moonstone" />
+            AI & ML CV
           </a>
 
           <a
-            href={getAssetPath(personal.cvUrl)}
+            href={getAssetPath("/Maxilan_Data_Engineering_CV.pdf")}
             target="_blank"
             rel="noopener noreferrer"
             download="Maxilan_Data_Engineering_CV.pdf"
-            className="btn-shine inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white/90 font-bold text-base sm:text-lg bg-white/5 hover:bg-white hover:text-zinc-950 transition-all duration-300"
+            className="btn-shine inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-white/20 text-white/90 font-bold text-sm sm:text-base bg-white/5 hover:bg-white hover:text-zinc-950 transition-all duration-300"
           >
-            <FileText className="w-4 h-4" />
-            {personal.cvName || 'Data Engineering CV'}
+            <FileText className="w-4 h-4 text-moonstone" />
+            Data Engineering CV
+          </a>
+
+          <a
+            href={socials.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-shine inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-white/20 text-white/90 font-bold text-sm sm:text-base bg-white/5 hover:bg-white hover:text-zinc-950 transition-all duration-300"
+          >
+            <Terminal className="w-4 h-4" />
+            GitHub
           </a>
         </motion.div>
       </motion.div>
