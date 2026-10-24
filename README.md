@@ -1,60 +1,55 @@
-# NovaFolio - Premium Interactive Data Science Portfolio
+# Harol Maxilan | AI/ML & Data Engineering Portfolio
+### Data Science Undergraduate @ Sabaragamuwa University of Sri Lanka | [🔗 Live Portfolio](https://max-i26.github.io/Portfolio/)
 
-Welcome to **NovaFolio**, the interactive web portfolio of **Harol Maxilan** (aka Maxi). 
-
-This project showcases engineering-grade implementation, integrating interactive data science visualization playgrounds and browser-based terminal interfaces to present credentials in a high-fidelity visual context.
-
----
-
-## 🚀 Key Features
-
-1. **Interactive Virtual Bash Terminal**:
-   - An in-browser mock console allowing visitors to inspect projects and files, run model predictions, check profile statistics, and look up communication handles.
-   
-2. **Visual Pre-processing Sandbox**:
-   - An interactive data science utility implementing mathematical scaling transforms (Z-Score Standardization, Min-Max [0, 1] Scaling) on synthetic datasets in real-time. Rendered using Chart.js on the client.
-   
-3. **Responsive Multi-Category Showcase**:
-   - Dynamic grid showcasing key repositories filtered by classifications (AI/ML/Data Science, Full-Stack Web, System Utilities).
-   
-4. **Acquired Competency Tracking**:
-   - Scroll-triggered animated skill indexes tracking languages, analytical frameworks, and database engines.
+A modern, high-performance personal portfolio built with React 19, TypeScript, Vite, Tailwind CSS v4, and Motion.
 
 ---
 
-## 🛠️ Technology Stack
+## ⚡ Overview
 
-- **Structure**: Semantic HTML5 markup.
-- **Styling**: Vanilla CSS3 utilizing custom properties, CSS Grid, Flexbox, keyframe animations, and modern glassmorphic overlays.
-- **Client Scripts**: Vanilla JavaScript (ES6+).
-- **Libraries**:
-  - [Chart.js](https://www.chartjs.org/) (Data visualization)
-  - [FontAwesome](https://fontawesome.com/) (Vector iconography)
+This portfolio showcases my work across **Artificial Intelligence, Machine Learning, Computer Vision, and Data Engineering**. Developed with responsive cyber-dark UI aesthetics, custom cursor glow effects, and interactive data showcases.
 
----
-
-## 💻 Local Setup & Development
-
-To host the portfolio or run it locally for customization, follow these steps:
-
-1. **Clone the repository**:
-   ```sh
-   git clone https://github.com/Max-i26/Portfolio.git
-   cd Portfolio
-   ```
-
-2. **Open index.html**:
-   - Open `index.html` directly in any web browser, or serve it using a lightweight development server like VS Code Live Server or Python's HTTP server:
-   ```sh
-   python -m http.server 8000
-   ```
-   - Navigate to `http://localhost:8000` in your browser.
+### 🚀 Key Sections & Highlights
+* **Hero Section** — Identity snapshot, live internship availability badge, and dynamic rotating specialization ticker.
+* **About Me** — Educational foundation at Sabaragamuwa University of Sri Lanka (B.Sc. Hons in Data Science, 2028), core specializations, impact metrics, and downloadable **Data Engineering CV**.
+* **Technical Arsenal** — Comprehensive skill mapping across Machine Learning, NLP, Computer Vision, Data Science, and Data Engineering.
+* **Leadership & Volunteering** — Operational and community roles including AWS Logistics and Operations Lead, IEEE INSL Ambassador, and student mentorship.
+* **Awards & Hackathon Honors** — Competitions and hackathon recognitions (Nexora Ideathon 3rd Place, Cipher Hackathon Finalist, J'PuraXtreme Finalist, CodeRally Finalist, Code Arena Finalist, Lead Spring Finalist).
+* **Featured Projects** — Detailed breakdowns of CareerCompass AI, NEXLAB, F1 Super Intelligence System, and Emotion Detection pipelines with GitHub repositories.
+* **Contact & Connect** — Direct communication channels, LinkedIn, GitHub, and email links.
 
 ---
 
-## 📑 Repository Structure
+## 🛠️ Tech Stack
 
-- `index.html` - Core layout structure containing SEO headers and section blocks.
-- `index.css` - Unified design system, spacing guides, and responsiveness rules.
-- `index.js` - Terminal interpreter, sandbox calculation algorithms, and form validations.
-- `maxx.jpg` - User profile avatar.
+* **Frontend:** React 19, TypeScript, Vite 6, Tailwind CSS v4, Motion (Framer Motion)
+* **Icons:** Lucide React
+* **Deployment:** GitHub Pages & GitHub Actions automated CI/CD pipeline
+
+---
+
+## 💻 Local Development
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/Max-i26/Portfolio.git
+cd Portfolio
+npm install
+npm run dev
+```
+
+To build for production:
+
+```bash
+npm run build
+```
+
+---
+
+## 🤝 Connect
+
+* **GitHub:** [@Max-i26](https://github.com/Max-i26)
+* **LinkedIn:** [harol-maxilan-6b2b16253](https://www.linkedin.com/in/harol-maxilan-6b2b16253)
+* **Email:** [maxilanharrol@gmail.com](mailto:maxilanharrol@gmail.com)
+* **Live Demo:** [max-i26.github.io/Portfolio](https://max-i26.github.io/Portfolio/)
