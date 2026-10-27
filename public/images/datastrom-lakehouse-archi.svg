@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1125.1149999999998 966.2590000000001" width="1125.1149999999998" height="966.2590000000001" style="--bg:#1F1F1F;--fg:#CCCCCC;--line:#CCCCCC;--accent:#0078D4;--muted:#CCCCCCCC;--surface:#181818;--border:#CCCCCC;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<polyline class="edge" data-from="P" data-to="E" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="574.7839999999999,93.80000000000001 574.7839999999999,141.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="E" data-to="M" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="574.7839999999999,212.5 574.7839999999999,260.5" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="M" data-to="T" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="574.7839999999999,331.2 574.7839999999999,379.2" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="T" data-to="T1" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Low Risk
+(p_i &lt; 0.08, low σ_i)" points="530.6942499999998,511.4692499999999 530.6942499999998,591.5590000000001 209.17499999999995,591.5590000000001 209.17499999999995,698.1590000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="T" data-to="T2" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Indeterminate Risk (0.08 ≤ p_i ≤ 0.18)
+OR High Uncertainty (Top Decile σ_i)" points="574.7839999999999,555.559 574.7839999999999,698.1590000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="T" data-to="T3" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="High Risk
+(p_i &gt; 0.18)" points="618.8737499999999,511.46925 618.8737499999999,591.5590000000001 928.1664999999998,591.5590000000001 928.1664999999998,698.1590000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="T1" data-to="O" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="209.17499999999995,802.6590000000001 209.17499999999995,820.6590000000001 574.7839999999999,820.6590000000001 574.7839999999999,838.6590000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="T2" data-to="O" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="574.7839999999999,802.6590000000001 574.7839999999999,820.6590000000001 574.7839999999999,820.6590000000001 574.7839999999999,838.6590000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="T3" data-to="O" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="928.1664999999998,802.6590000000001 928.1664999999998,820.6590000000001 574.7839999999999,820.6590000000001 574.7839999999999,838.6590000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="T" data-to="T1" data-label="Low Risk
+(p_i &lt; 0.08, low σ_i)">
+  <rect x="157.17499999999995" y="622.5590000000001" width="103.18600000000002" height="44.6" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="208.76799999999997" y="644.859" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)"><tspan x="208.76799999999997" dy="-3.3000000000000007">Low Risk</tspan><tspan x="208.76799999999997" dy="14.3">(p_i &lt; 0.08, low σ_i)</tspan></text>
+</g>
+<g class="edge-label" data-from="T" data-to="T2" data-label="Indeterminate Risk (0.08 ≤ p_i ≤ 0.18)
+OR High Uncertainty (Top Decile σ_i)">
+  <rect x="481.7839999999999" y="598.5590000000001" width="185.75199999999998" height="44.6" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="574.6599999999999" y="620.859" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)"><tspan x="574.6599999999999" dy="-3.3000000000000007">Indeterminate Risk (0.08 ≤ p_i ≤ 0.18)</tspan><tspan x="574.6599999999999" dy="14.3">OR High Uncertainty (Top Decile σ_i)</tspan></text>
+</g>
+<g class="edge-label" data-from="T" data-to="T3" data-label="High Risk
+(p_i &gt; 0.18)">
+  <rect x="896.1664999999998" y="622.5590000000001" width="63.982" height="44.6" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="928.1574999999998" y="644.859" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)"><tspan x="928.1574999999998" dy="-3.3000000000000007">High Risk</tspan><tspan x="928.1574999999998" dy="14.3">(p_i &gt; 0.18)</tspan></text>
+</g>
+<g class="node" data-id="P" data-label="&lt;b&gt;Inpatient Admission&lt;/b&gt;
+24h Pre-Discharge Window" data-shape="rectangle">
+  <rect x="473.7809999999999" y="40" width="202.00599999999994" height="53.800000000000004" rx="0" ry="0" fill="#1E293B" stroke="#38BDF8" stroke-width="2px" />
+  <text x="574.7839999999999" y="66.9" text-anchor="middle" font-size="13" font-weight="500" fill="#FFFFFF"><tspan x="574.7839999999999" dy="-3.9000000000000012"><tspan font-weight="bold">Inpatient Admission</tspan></tspan><tspan x="574.7839999999999" dy="16.900000000000002">24h Pre-Discharge Window</tspan></text>
+</g>
+<g class="node" data-id="E" data-label="&lt;b&gt;Automated EHR Extraction&lt;/b&gt;
+Extract 19 Causal Predictors
+(Age, Past Admissions, Comorbidities)" data-shape="rectangle">
+  <rect x="444.51149999999996" y="141.8" width="260.5449999999999" height="70.7" rx="0" ry="0" fill="#1E293B" stroke="#818CF8" stroke-width="2px" />
+  <text x="574.7839999999999" y="177.15" text-anchor="middle" font-size="13" font-weight="500" fill="#FFFFFF"><tspan x="574.7839999999999" dy="-12.350000000000001"><tspan font-weight="bold">Automated EHR Extraction</tspan></tspan><tspan x="574.7839999999999" dy="16.900000000000002">Extract 19 Causal Predictors</tspan><tspan x="574.7839999999999" dy="16.900000000000002">(Age, Past Admissions, Comorbidities)</tspan></text>
+</g>
+<g class="node" data-id="M" data-label="&lt;b&gt;50-Fold Additive Inference Engine&lt;/b&gt;
+• Calculate Calibrated Probability (p_i)
+• Compute Epistemic Model Uncertainty (σ_i)" data-shape="rectangle">
+  <rect x="426.35699999999986" y="260.5" width="296.854" height="70.7" rx="0" ry="0" fill="#1E293B" stroke="#818CF8" stroke-width="2px" />
+  <text x="574.7839999999999" y="295.85" text-anchor="middle" font-size="13" font-weight="500" fill="#FFFFFF"><tspan x="574.7839999999999" dy="-12.350000000000001"><tspan font-weight="bold">50-Fold Additive Inference Engine</tspan></tspan><tspan x="574.7839999999999" dy="16.900000000000002">• Calculate Calibrated Probability (p_i)</tspan><tspan x="574.7839999999999" dy="16.900000000000002">• Compute Epistemic Model Uncertainty (σ_i)</tspan></text>
+</g>
+<g class="node" data-id="T" data-label="&lt;b&gt;Operational Triage
+Routing Engine&lt;/b&gt;" data-shape="diamond">
+  <polygon points="574.7839999999999,379.2 662.9634999999998,467.3795 574.7839999999999,555.559 486.60449999999986,467.3795" fill="#1E293B" stroke="#F59E0B" stroke-width="2px" />
+  <text x="574.7839999999999" y="467.3795" text-anchor="middle" font-size="13" font-weight="500" fill="#FFFFFF"><tspan x="574.7839999999999" dy="-3.9000000000000012"><tspan font-weight="bold">Operational Triage</tspan></tspan><tspan x="574.7839999999999" dy="16.900000000000002">Routing Engine</tspan></text>
+</g>
+<g class="node" data-id="T1" data-label="&lt;b&gt;TIER 1: AUTOMATED PRIMARY CARE&lt;/b&gt;
+• Standard Digital EHR Discharge Summary
+• Automated SMS Lifestyle &amp; Medication Reminders
+• Routine 14-Day Clinic Follow-up
+&lt;i&gt;Zero Hospital Staff Burden&lt;/i&gt;" data-shape="rectangle">
+  <rect x="40" y="698.1590000000001" width="338.3499999999999" height="104.50000000000001" rx="0" ry="0" fill="#064E3B" stroke="#10B981" stroke-width="2px" />
+  <text x="209.17499999999995" y="750.4090000000001" text-anchor="middle" font-size="13" font-weight="500" fill="#FFFFFF"><tspan x="209.17499999999995" dy="-29.250000000000004"><tspan font-weight="bold">TIER 1: AUTOMATED PRIMARY CARE</tspan></tspan><tspan x="209.17499999999995" dy="16.900000000000002">• Standard Digital EHR Discharge Summary</tspan><tspan x="209.17499999999995" dy="16.900000000000002">• Automated SMS Lifestyle &amp; Medication Reminders</tspan><tspan x="209.17499999999995" dy="16.900000000000002">• Routine 14-Day Clinic Follow-up</tspan><tspan x="209.17499999999995" dy="16.900000000000002"><tspan font-style="italic">Zero Hospital Staff Burden</tspan></tspan></text>
+</g>
+<g class="node" data-id="T2" data-label="&lt;b&gt;TIER 2: HUMAN-IN-THE-LOOP OVERSIGHT&lt;/b&gt;
+• &lt;b&gt;Mandatory In-Person Chart Audit&lt;/b&gt; Before Release
+• Clinical Pharmacist Medication Reconciliation
+• Social Determinants &amp; Barrier Screening
+• Dedicated Nurse 72h Phone Check-in" data-shape="rectangle">
+  <rect x="406.3499999999999" y="698.1590000000001" width="336.86799999999994" height="104.50000000000001" rx="0" ry="0" fill="#451A03" stroke="#F59E0B" stroke-width="2px" />
+  <text x="574.7839999999999" y="750.4090000000001" text-anchor="middle" font-size="13" font-weight="500" fill="#FFFFFF"><tspan x="574.7839999999999" dy="-29.250000000000004"><tspan font-weight="bold">TIER 2: HUMAN-IN-THE-LOOP OVERSIGHT</tspan></tspan><tspan x="574.7839999999999" dy="16.900000000000002">• <tspan font-weight="bold">Mandatory In-Person Chart Audit</tspan> Before Release</tspan><tspan x="574.7839999999999" dy="16.900000000000002">• Clinical Pharmacist Medication Reconciliation</tspan><tspan x="574.7839999999999" dy="16.900000000000002">• Social Determinants &amp; Barrier Screening</tspan><tspan x="574.7839999999999" dy="16.900000000000002">• Dedicated Nurse 72h Phone Check-in</tspan></text>
+</g>
+<g class="node" data-id="T3" data-label="&lt;b&gt;TIER 3: INTENSIVE TRANSITIONAL CARE&lt;/b&gt;
+• Dedicated Transitional Care Nurse Assigned
+• Scheduled In-Home Health Nursing Visit (72h)
+• Guaranteed 7-Day Specialist Outpatient Visit
+• 24/7 Rapid-Response Clinical Triage Hotline" data-shape="rectangle">
+  <rect x="771.2179999999998" y="698.1590000000001" width="313.897" height="104.50000000000001" rx="0" ry="0" fill="#450A0A" stroke="#EF4444" stroke-width="2px" />
+  <text x="928.1664999999998" y="750.4090000000001" text-anchor="middle" font-size="13" font-weight="500" fill="#FFFFFF"><tspan x="928.1664999999998" dy="-29.250000000000004"><tspan font-weight="bold">TIER 3: INTENSIVE TRANSITIONAL CARE</tspan></tspan><tspan x="928.1664999999998" dy="16.900000000000002">• Dedicated Transitional Care Nurse Assigned</tspan><tspan x="928.1664999999998" dy="16.900000000000002">• Scheduled In-Home Health Nursing Visit (72h)</tspan><tspan x="928.1664999999998" dy="16.900000000000002">• Guaranteed 7-Day Specialist Outpatient Visit</tspan><tspan x="928.1664999999998" dy="16.900000000000002">• 24/7 Rapid-Response Clinical Triage Hotline</tspan></text>
+</g>
+<g class="node" data-id="O" data-label="&lt;b&gt;HOSPITAL OUTCOMES&lt;/b&gt;
+• Reduced Avoidable Readmissions
+• Zero CMS/HRRP Penalties ($1.2M Saved)
+• Optimized Clinical Resource Allocation" data-shape="rectangle">
+  <rect x="429.3209999999999" y="838.6590000000001" width="290.92599999999993" height="87.60000000000001" rx="0" ry="0" fill="#0F172A" stroke="#38BDF8" stroke-width="2px" />
+  <text x="574.7839999999999" y="882.4590000000001" text-anchor="middle" font-size="13" font-weight="500" fill="#FFFFFF"><tspan x="574.7839999999999" dy="-20.8"><tspan font-weight="bold">HOSPITAL OUTCOMES</tspan></tspan><tspan x="574.7839999999999" dy="16.900000000000002">• Reduced Avoidable Readmissions</tspan><tspan x="574.7839999999999" dy="16.900000000000002">• Zero CMS/HRRP Penalties ($1.2M Saved)</tspan><tspan x="574.7839999999999" dy="16.900000000000002">• Optimized Clinical Resource Allocation</tspan></text>
+</g>
+</svg>

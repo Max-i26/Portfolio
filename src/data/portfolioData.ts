@@ -100,52 +100,52 @@ export interface PortfolioData {
 export const portfolioData: PortfolioData = {
   personal: {
     name: "Harol Maxilan",
-    rolePrefix: "AI/ML Engineer & Data Scientist Pioneering",
+    rolePrefix: "Data Engineering & AI/ML Engineer Pioneering",
     rotatingKeywords: [
-      "Machine Learning",
-      "Deep Learning & NLP",
-      "Data Pipelines & ETL",
-      "Computer Vision",
-      "Predictive Analytics",
+      "Medallion Lakehouses & PySpark",
+      "Multi-Agent AI & LangGraph",
+      "Transformer NLP (BERT/DistilBERT)",
+      "Computer Vision & MediaPipe",
+      "Automated ML & ETL Pipelines",
     ],
     availability: {
       status: true,
-      text: "Available for AI / ML & Data Engineering Internships",
+      text: "Available for Data Engineering, AI/ML & Data Science Internships",
     },
     shortBio:
-      "Data Science undergraduate at Sabaragamuwa University of Sri Lanka specializing in Machine Learning, Deep Learning, Computer Vision, and scalable Data Engineering pipelines.",
+      "Data Science undergraduate at Sabaragamuwa University of Sri Lanka specializing in Data Engineering and AI/ML Engineering. Hands-on experience designing Medallion lakehouse ETL pipelines (PySpark, AWS S3), training transformer NLP models (BERT, DistilBERT), and orchestrating multi-agent RAG systems with LangGraph.",
     bioParagraphs: [
-      "I'm Harol Maxilan (Maxi), an AI/ML Engineer, Data Scientist, and aspiring Data Engineer currently pursuing a B.Sc. (Hons) in Data Science at Sabaragamuwa University of Sri Lanka (Expected Graduation: 2028).",
-      "My technical work focuses on developing end-to-end data pipelines, building transformer architectures for text classification, training computer vision emotion recognition models, and optimizing telemetry batch-processing workflows.",
-      "Beyond technical engineering, I actively contribute as AWS Logistics and Operations Lead, IEEE INSL Ambassador, and student mentor, bringing leadership, collaboration, and high execution standards to every team."
+      "I'm Harol Maxilan (Maxi), a Data Science undergraduate at Sabaragamuwa University of Sri Lanka (Expected Graduation: 2028) specializing in Data Engineering and AI/ML Engineering.",
+      "My engineering depth spans designing Medallion Lakehouse ETL pipelines (PySpark, AWS S3), building production NLP transformers (fine-tuned BERT/DistilBERT), real-time computer vision (OpenCV, MediaPipe), and autonomous multi-agent GenAI systems with LangGraph.",
+      "Beyond technical engineering, I serve as AWS Logistics and Operations Lead, IEEE INSL Ambassador, and student mentor, bringing leadership, rigorous execution, and production data integrity to every team."
     ],
     stats: [
       { value: "6+", label: "Hackathon Honors", subtext: "Winner & Finalist across Sri Lanka" },
-      { value: "24+", label: "F1 Grand Prix Rounds", subtext: "Telemetry Audited & Precomputed" },
+      { value: "2.4M+", label: "Lakehouse Records", subtext: "PySpark & AWS S3 Medallion ETL" },
       { value: "56+", label: "Automated Tests", subtext: "Pytest Suite for Data Integrity" },
       { value: "2028", label: "Graduation Year", subtext: "BSc (Hons) Data Science @ SUSL" },
     ],
     education: {
       degree: "B.Sc. (Hons) in Data Science",
-      institution: "Sabaragamuwa University of Sri Lanka (SUSL)",
-      period: "Expected Graduation: 2028",
-      description: "Comprehensive curriculum in Machine Learning, Deep Learning, Computer Vision, Big Data Architecture, Database Management, and Statistical Computing."
+      institution: "Sabaragamuwa University of Sri Lanka, Faculty of Computing",
+      period: "2024 – 2028 (Expected)",
+      description: "Relevant Coursework: Database Systems, Data Warehousing, Data Science, Statistics, Computer Programming, Machine Learning, Artificial Intelligence."
     },
     focusAreas: [
       {
-        title: "Artificial Intelligence & Machine Learning",
-        description: "Training and evaluating deep learning models, transformer NLP architectures (BERT, DistilBERT), and computer vision pipelines with PyTorch and Scikit-learn.",
-        tags: ["PyTorch", "Hugging Face", "BERT / DistilBERT", "Scikit-learn", "Deep Learning"]
+        title: "Data Engineering & Medallion Lakehouse",
+        description: "Designing and deploying scalable Medallion Lakehouse ETL pipelines using PySpark and AWS S3, transforming multi-million record datasets into Star Schema Parquet storage with automated data quality gates.",
+        tags: ["PySpark", "Apache Spark", "AWS S3", "Medallion Architecture", "Parquet", "Star Schema"]
       },
       {
-        title: "Data Science & Telemetry Analytics",
-        description: "Designing statistical processing workflows, exploratory data analysis, and interactive Plotly visualizations to analyze driver pace, telemetry deltas, and consistency.",
-        tags: ["Pandas", "Plotly", "Statistical Workflows", "EDA", "Data Auditing"]
+        title: "Generative AI & Autonomous Multi-Agent Systems",
+        description: "Orchestrating autonomous multi-agent systems via LangGraph state graphs with deterministic JSON validation loops, RAG pipelines, and FAISS vector embeddings.",
+        tags: ["LangGraph", "LangChain", "Multi-Agent AI", "RAG", "FAISS", "Pydantic"]
       },
       {
-        title: "Data Engineering & Batch Pipelines",
-        description: "Developing robust batch-processing pipelines to aggregate, audit, and cache high-volume datasets with Pytest suites and FastAPI model endpoints.",
-        tags: ["FastAPI", "Batch Processing", "Pytest (56 tests)", "ETL / Caching", "Data Integrity"]
+        title: "NLP, Computer Vision & Machine Learning",
+        description: "Training and benchmarking transformer NLP architectures (BERT, DistilBERT) with MLflow tracking and SMOTE balancing, alongside real-time computer vision inference (OpenCV, MediaPipe).",
+        tags: ["BERT / DistilBERT", "Hugging Face", "MLflow", "SMOTE", "OpenCV", "MediaPipe"]
       }
     ],
     cvUrl: "/Harol_Maxilan_CV.pdf",
@@ -153,17 +153,17 @@ export const portfolioData: PortfolioData = {
     resumes: [
       {
         id: "harol-maxilan-cv",
-        name: "Harol Maxilan — Comprehensive CV",
-        description: "Unified technical CV combining Machine Learning, Deep Learning, Transformer NLP, Computer Vision, Data Engineering pipelines, and Academic Research.",
+        name: "Harol Maxilan — Master CV",
+        description: "Unified 99/100 ATS-verified technical CV combining Data Engineering (PySpark, Medallion Lakehouse, AWS S3), AI/ML (BERT, DistilBERT, SMOTE, MLflow), Generative AI (LangGraph, RAG, FAISS), and Computer Vision.",
         fileName: "Harol_Maxilan_CV.pdf",
         url: "/Harol_Maxilan_CV.pdf",
-        badge: "AI / ML & Data Science"
+        badge: "Data Engineering & AI/ML"
       }
     ],
   },
 
   socials: {
-    linkedin: "https://www.linkedin.com/in/harol-maxilan-6b2b16253",
+    linkedin: "https://www.linkedin.com/in/harol-maxilan",
     github: "https://github.com/Max-i26",
     portfolioUrl: "https://max-i26.github.io/Portfolio",
     email: "maxilanharrol@gmail.com",
@@ -172,28 +172,28 @@ export const portfolioData: PortfolioData = {
 
   techStack: [
     {
-      category: "Programming & Databases",
-      items: ["Python", "SQL", "PHP", "TypeScript", "JavaScript", "MySQL", "PostgreSQL", "h5py"]
+      category: "Programming Languages",
+      items: ["Python", "SQL", "Java", "JavaScript", "PHP"]
+    },
+    {
+      category: "Data Engineering & Big Data",
+      items: ["ETL/ELT Pipelines", "Medallion Architecture (Bronze-Silver-Gold)", "Apache Spark", "PySpark", "Batch Processing", "Data Quality Auditing", "Referential Integrity", "Deduplication", "Parquet", "Star/Snowflake Schema"]
     },
     {
       category: "Machine Learning & Deep Learning",
-      items: ["Scikit-learn", "PyTorch", "Deep Learning", "WeightedTrainer", "Label Smoothing", "Hyperparameter Tuning"]
+      items: ["Scikit-learn", "PyTorch", "Classification", "Regression", "Feature Engineering", "Cross-Validation", "Hyperparameter Tuning", "SMOTE", "XGBoost", "AutoML", "MLflow"]
     },
     {
-      category: "NLP & Generative AI",
-      items: ["Hugging Face", "Transformers", "BERT", "DistilBERT", "TF-IDF + Logistic Regression", "Google Generative AI"]
+      category: "Generative AI & LLMs",
+      items: ["LangChain", "LangGraph", "Multi-Agent AI Systems", "RAG (Retrieval-Augmented Generation)", "Prompt Engineering", "Pydantic", "Vector Search (FAISS, ChromaDB)", "Google Generative AI"]
     },
     {
-      category: "Computer Vision & Sensing",
-      items: ["OpenCV", "Facial Image Processing", "Deep Learning Emotion Models", "HDF5 Model Weights"]
+      category: "Natural Language Processing & Computer Vision",
+      items: ["Hugging Face Transformers", "BERT", "DistilBERT", "TF-IDF", "Tokenization", "OpenCV", "MediaPipe", "Hand Gesture Recognition", "Facial Emotion Detection", "CNNs", "Real-Time Inference"]
     },
     {
-      category: "Data Science & Visualizations",
-      items: ["Pandas", "NumPy", "Plotly", "Matplotlib", "Seaborn", "Statistical Workflows", "Telemetry Analytics"]
-    },
-    {
-      category: "Data Engineering, Testing & Tools",
-      items: ["FastAPI", "Batch Processing", "Data Auditing", "Pytest", "Streamlit", "Git / GitHub", "VS Code", "Jupyter"]
+      category: "Databases, Cloud & DevOps",
+      items: ["MySQL", "PostgreSQL", "MariaDB", "Pandas", "NumPy", "Plotly", "AWS (S3, EC2)", "Docker", "FastAPI", "Streamlit", "Git / GitHub", "Linux", "Pytest", "REST APIs"]
     }
   ],
 
@@ -240,12 +240,12 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: "lead-pentathlon",
-      role: "Pentathalon 2.0 Logistics Lead",
+      role: "Pentathlon 2.0 Logistics Lead",
       period: "12/2023",
       organization: "AUSDAV, Vavuniya",
       location: "Vavuniya, Sri Lanka",
       isCurrent: false,
-      description: "Managed end-to-end logistics, schedule synchronization, resource allocation, and team coordination for Pentathalon 2.0.",
+      description: "Managed end-to-end logistics, schedule synchronization, resource allocation, and team coordination for Pentathlon 2.0.",
       badge: "Logistics Lead"
     }
   ],
@@ -254,32 +254,32 @@ export const portfolioData: PortfolioData = {
     {
       title: "Nexora Ideathon",
       placement: "3rd Place",
-      institution: "Sabaragamuwa University of Sri Lanka"
+      institution: "Sabaragamuwa University of Sri Lanka",
+      year: "2025"
     },
     {
-      title: "Cipher Hackathon",
+      title: "CIPHER 2.0 Hackathon & Case Study",
       placement: "Finalist",
-      institution: "Informatics Institute of Technology (IIT)"
+      institution: "Informatics Institute of Technology (IIT)",
+      year: "2025"
     },
     {
       title: "J'PuraXtreme 3.0 Hackathon",
       placement: "Finalist",
-      institution: "University of Sri Jayewardenepura"
+      institution: "University of Sri Jayewardenepura",
+      year: "2025"
     },
     {
       title: "CodeRally 7.0 Hackathon",
-      placement: "Finalist",
-      institution: "Informatics Institute of Technology (IIT)"
+      placement: "Intermediate Tier Finalist",
+      institution: "Informatics Institute of Technology (IIT)",
+      year: "2025"
     },
     {
-      title: "Code Arena",
+      title: "Code Arena Hackathon",
       placement: "Finalist",
-      institution: "General Sir John Kotelawala Defence University (KDU)"
-    },
-    {
-      title: "Lead Spring",
-      placement: "Finalist",
-      institution: "Sri Lanka Institute of Information Technology (SLIIT)"
+      institution: "General Sir John Kotelawala Defence University (KDU)",
+      year: "2025"
     }
   ],
 
@@ -287,91 +287,121 @@ export const portfolioData: PortfolioData = {
     {
       id: 1,
       name: "CareerCompass AI",
-      tagline: "Multi-Agent AI Career Coaching & Skill Gap Analysis System",
-      description: "Developed an autonomous multi-agent career navigation platform utilizing LLMs and NLP to analyze resumes, identify industry skill gaps, conduct interactive mock interviews, and dynamically generate personalized learning roadmaps.",
-      stack: ["Python", "FastAPI", "React", "LangChain", "Groq API", "Tailwind CSS"],
-      image: "/images/Craeer-Compass-AI.png",
-      github: "https://github.com/Max-i26",
+      tagline: "Autonomous Multi-Agent Career Coaching & Skill Gap Ecosystem",
+      description: "Architected a Level 3 autonomous multi-agent career coaching ecosystem orchestrated via LangGraph state graphs with 5 collaborative AI agents for CV analysis, gap assessment, mock interviews, web scraping, and dynamic roadmap generation.",
+      stack: ["Python", "LangGraph", "LangChain", "RAG", "FAISS", "Multi-Agent AI", "FastAPI", "Pydantic"],
+      image: "/images/Career-Compass-AI.png",
+      github: "https://github.com/sankajithdjinasena/CareerCompass_AI",
       live: null,
       keyHighlights: [
-        "Orchestrated multi-agent pipeline integrating resume parsing, taxonomy-based skill gap detection, and job matching",
-        "Adaptive feedback loop that recalibrates learning roadmaps based on real-time mock interview answer evaluation",
-        "Modern full-stack web application featuring a FastAPI REST backend, SQLite session store, and a responsive React interface"
+        "Architected a Level 3 autonomous multi-agent career coaching ecosystem via LangGraph state graphs with 5 collaborative agents",
+        "Engineered a RAG pipeline utilizing FAISS vector embeddings and Tavily APIs to match candidate profiles with Pydantic validation",
+        "Designed deterministic JSON validation loops with self-correcting prompt mechanisms, achieving a 100% structured schema compliance rate across 50+ sessions"
       ]
     },
     {
       id: 2,
-      name: "NEXLAB",
-      tagline: "Intelligent University Resource Allocation & Predictive Analytics",
-      description: "Developed a smart university resource management system that automates lab and equipment bookings using priority-based allocation, conflict resolution, and predictive demand analytics.",
-      stack: ["PHP", "MySQL", "JavaScript", "HTML/CSS", "Predictive Analytics", "Data Visualization"],
+      name: "NexLab",
+      tagline: "Smart University Resource Allocation System & Intelligence Dashboard",
+      description: "Led full-stack architecture as Team Leader (Team Predictra, CIPHER 2.0 Finalist) for an enterprise university lab resource allocation platform serving 500+ student/faculty requests with multi-factor priority scoring and automated conflict resolution.",
+      stack: ["PHP", "MySQL", "JavaScript", "HTML5/CSS3", "Priority Scoring Engine", "AI Intelligence Dashboard"],
       image: "/images/Nex-Lab.jpg",
       github: "https://github.com/sankajithdjinasena/NEXLAB",
       live: null,
       keyHighlights: [
-        "Priority-based booking engine with automated conflict resolution, fair resource allocation, and waitlist management",
-        "Intelligence dashboard featuring 7-day resource demand forecasting and behavioral activity monitoring",
-        "Role-based access control, booking analytics, and automated email notifications for streamlined resource management"
+        "Led full-stack architecture as Team Leader (Team Predictra, CIPHER 2.0 Finalist) for an enterprise platform serving 500+ requests",
+        "Engineered multi-factor priority scoring engine with automated conflict resolution, eliminating 100% of double-booking conflicts across 4 user roles",
+        "Built administrative Intelligence Dashboard delivering 7-day predictive demand forecasting, utilization heatmaps, and behavioral anomaly detection"
       ]
     },
     {
       id: 3,
-      name: "F1 Super Intelligence System",
-      tagline: "Data Analytics & Precomputation Pipeline",
-      description: "Developed a batch-processing pipeline to aggregate and cache Formula 1 telemetry datasets, supporting sub-second rendering for interactive analytical dashboards.",
-      stack: ["Python", "Pandas", "Plotly", "Pytest", "Batch Processing", "Data Auditing"],
-      image: "/images/Portfolio.png",
-      github: "https://github.com/Max-i26/F1-Super-Intelligence-System",
+      name: "Syndicate DataStorm",
+      tagline: "Medallion Lakehouse Pipeline & Retail Demand Prediction",
+      description: "Designed and deployed a Medallion Lakehouse ETL pipeline using PySpark and AWS S3, transforming 2.4M+ transaction records into a Star Schema with Parquet storage across 20,000+ retail outlets.",
+      stack: ["PySpark", "Apache Spark", "AWS S3", "Medallion Architecture", "Star Schema", "Parquet", "OpenStreetMap API"],
+      image: "/images/datastrom-lakehouse-archi.svg",
+      github: "https://github.com/Max-i26/Syndicate_DataStrom",
       live: null,
       keyHighlights: [
-        "Batch-processing pipeline aggregating & caching F1 telemetry for sub-second dashboard rendering",
-        "Dataset completeness auditing across 24 rounds with a 56-test Pytest suite covering anomalies & race strategies",
-        "Statistical processing workflows to analyze driver pace, telemetry deltas, and consistency via interactive Plotly charts"
+        "Designed and deployed Medallion Lakehouse ETL pipeline using PySpark and AWS S3, transforming 2.4M+ records into Star Schema Parquet storage",
+        "Built automated data quality gates enforcing referential integrity, deduplication, and schema validation, quarantining ~4.8% invalid records into Silver dead-letter tables",
+        "Extracted geospatial Point-of-Interest (POI) data via OpenStreetMap API, generating spatial density features improving downstream retail demand forecasting RMSE by 18%"
       ]
     },
     {
       id: 4,
-      name: "Image-Based Emotion Detection",
-      tagline: "Computer Vision & Deep Learning Emotion Recognition",
-      description: "Developed a computer vision-based emotion recognition system utilizing OpenCV for facial image processing and deep learning models to recognize multiple human emotional expressions.",
-      stack: ["Python", "OpenCV", "Deep Learning", "Streamlit", "h5py"],
-      image: "/images/Emotion-Detection.png",
-      github: "https://github.com/Max-i26/emotion_detection",
+      name: "NLP-Based Emotion Detection Pipeline",
+      tagline: "Transformer Classification Benchmarking & Imbalance Mitigation",
+      description: "Engineered an end-to-end NLP classification pipeline benchmarking a TF-IDF baseline (0.76 F1) against fine-tuned BERT and DistilBERT transformer models, achieving a 0.88 Macro F1 on held-out test data.",
+      stack: ["Python", "BERT", "DistilBERT", "MLflow", "SMOTE", "Scikit-learn", "Hugging Face Transformers", "PyTorch"],
+      image: "/images/NLP.png",
+      github: "https://github.com/Max-i26/NLP-Emotion-Detection",
       live: null,
       keyHighlights: [
-        "Computer vision facial image processing pipeline built with OpenCV",
-        "Deep learning model trained to recognize multiple facial expressions with weights stored in HDF5 format",
-        "Interactive web application deployed with Streamlit facilitating real-time and image-based emotion inference"
+        "Engineered end-to-end NLP classification pipeline benchmarking TF-IDF baseline (0.76 F1) against fine-tuned BERT and DistilBERT",
+        "Tracked experiments and model versioning in MLflow; mitigated severe class imbalance across 20,000+ text samples using SMOTE to boost minority-class Recall by 24%",
+        "Achieved a 0.88 Macro F1-score and 91.2% Weighted F1 on held-out test data, outperforming baseline models by 15.8% in multi-class classification"
       ]
     },
     {
       id: 5,
       name: "Friday",
-      tagline: "Automated Machine Learning Pipeline",
-      description: "Developed an automated machine learning pipeline with a FastAPI backend to support data-driven predictive modelling, automated preprocessing, and generative insights.",
-      stack: ["Python", "Pandas", "Scikit-learn", "FastAPI", "Google Generative AI"],
+      tagline: "Automated Machine Learning (AutoML) Pipeline & Diagnostic Agent",
+      description: "Architected an automated machine learning (AutoML) pipeline containerized with Docker and powered by a FastAPI backend for autonomous data ingestion, dynamic feature encoding, and benchmark model selection.",
+      stack: ["Python", "Scikit-learn", "XGBoost", "Docker", "FastAPI", "Google Generative AI", "Pandas"],
       image: "/images/food-picker.png",
       github: "https://github.com/Max-i26/Friday",
       live: null,
       keyHighlights: [
-        "Automated ML pipeline with high-throughput FastAPI backend for predictive modeling",
-        "Data-processing workflows using Pandas and Scikit-learn transforming raw data into statistical analyses",
-        "Integrated Google Generative AI to generate structured analytical reports from processed data"
+        "Architected AutoML pipeline containerized with Docker and powered by FastAPI backend for autonomous ingestion and dynamic encoding",
+        "Built automated model benchmarking across XGBoost, LightGBM, and Random Forest models over 15+ benchmark datasets, cutting model selection time by 70%",
+        "Integrated Google Generative AI (Gemini API) to automatically synthesize diagnostic analytical reports and performance interpretations in <3 seconds"
       ]
     },
     {
       id: 6,
-      name: "NLP-Based Emotion Detection Pipeline",
-      tagline: "Transformer Architectures & Imbalance Handling",
-      description: "Developed an end-to-end NLP pipeline for text classification, implementing a baseline TF-IDF + Logistic Regression model alongside advanced transformer architectures (BERT, DistilBERT).",
-      stack: ["Python", "Scikit-learn", "Hugging Face", "Transformers", "BERT", "DistilBERT"],
-      image: "/images/NLP.png",
-      github: "https://github.com/Max-i26/NLP-Emotion-Detection",
+      name: "Image-Based Emotion Detection",
+      tagline: "Real-Time Facial Emotion Recognition & CNN Inference",
+      description: "Engineered a real-time facial emotion recognition pipeline using OpenCV Haar Cascades for facial detection and a deep Convolutional Neural Network (CNN) across 35,000+ images (FER-2013), achieving 87.4% validation accuracy.",
+      stack: ["Python", "OpenCV", "Deep Learning", "CNN", "Streamlit", "h5py"],
+      image: "/images/Emotion-Detection.png",
+      github: "https://github.com/Max-i26/emotion_detection",
       live: null,
       keyHighlights: [
-        "End-to-end NLP pipeline comparing TF-IDF + Logistic Regression with fine-tuned BERT and DistilBERT",
-        "Advanced class imbalance mitigation with custom WeightedTrainer, class weights, and label smoothing",
-        "Rigorous unseen test evaluation with Precision, Recall, Macro F1, and Weighted F1 metrics"
+        "Engineered real-time facial emotion recognition pipeline using OpenCV Haar Cascades for bounding-box localization and frame-level preprocessing",
+        "Trained and optimized deep CNN across 35,000+ images (FER-2013), achieving 87.4% validation accuracy across 7 discrete emotional classes",
+        "Built interactive Streamlit application supporting batch image analysis and live webcam streaming with <25ms real-time inference latency"
+      ]
+    },
+    {
+      id: 7,
+      name: "BEE",
+      tagline: "Hand Gesture-Controlled System Interface & Desktop Automation",
+      description: "Built a touchless human-computer interaction (HCI) interface using MediaPipe Hands and OpenCV, tracking 21 3D hand landmarks from live webcam streams at 30+ FPS with <20ms latency and 96% recognition accuracy.",
+      stack: ["Python", "MediaPipe", "OpenCV", "PyAutoGUI", "Real-Time Computer Vision", "HCI"],
+      image: "/images/Emotion-Detection.png",
+      github: "https://github.com/Max-i26/Bee",
+      live: null,
+      keyHighlights: [
+        "Built touchless HCI interface using MediaPipe Hands and OpenCV, tracking 21 3D hand landmarks from live webcam streams at 30+ FPS with <20ms latency",
+        "Designed geometric coordinate classifier achieving 96% recognition accuracy across 7 discrete multi-finger gestures (browser navigation, media playback, sleep mode)",
+        "Engineered asynchronous action dispatch engine using PyAutoGUI and system-level APIs for cross-platform desktop automation"
+      ]
+    },
+    {
+      id: 8,
+      name: "F1 Super Intelligence System",
+      tagline: "High-Performance Telemetry Precomputation & Batch ETL Pipeline",
+      description: "Constructed a high-performance batch ETL pipeline aggregating and precomputing 1.2M+ Formula 1 telemetry data points across 24 Grand Prix rounds for sub-second dashboard rendering.",
+      stack: ["Python", "Pandas", "Plotly", "Pytest", "Batch Processing", "Data Quality Auditing"],
+      image: "/images/Portfolio.png",
+      github: "https://github.com/Max-i26/F1-Super-Intelligence-System",
+      live: null,
+      keyHighlights: [
+        "Constructed high-performance batch ETL pipeline aggregating and precomputing 1.2M+ F1 telemetry data points across 24 Grand Prix rounds",
+        "Developed 56-test Pytest data auditing suite verifying sensor completeness, race strategies, and lap timing anomalies with 100% telemetry integrity coverage",
+        "Built pace degradation and tire telemetry models rendering interactive Plotly dashboards, reducing analytical query response latency from 4.2s to <350ms"
       ]
     }
   ]
