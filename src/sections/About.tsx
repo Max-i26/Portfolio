@@ -230,8 +230,8 @@ const About: React.FC = () => {
         </motion.div>
       )}
 
-      {/* Curriculum Vitae / Technical Resumes Cards */}
-      {personal.resumes && personal.resumes.length > 0 && (
+      {/* Curriculum Vitae Card */}
+      {personal.cvUrl && (
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -243,7 +243,7 @@ const About: React.FC = () => {
             <div className="flex items-center gap-2">
               <FileText className="w-5 h-5 text-moonstone" />
               <h3 className="text-xl sm:text-2xl font-bold text-white tracking-wide font-poppins">
-                Curriculum Vitae / Technical Resumes
+                Curriculum Vitae
               </h3>
             </div>
             <span className="text-xs text-white/30 tracking-widest uppercase font-mono hidden sm:inline-block">
@@ -251,44 +251,42 @@ const About: React.FC = () => {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {personal.resumes.map((resume) => (
-              <div
-                key={resume.id}
-                className="glass-card p-6 rounded-2xl border border-white/10 hover:border-moonstone/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group hover:-translate-y-1"
-              >
-                <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-moonstone/40 to-transparent group-hover:via-moonstone transition-all duration-500" />
-                
+          <div className="glass-card p-6 sm:p-8 rounded-2xl border border-white/10 hover:border-moonstone/40 transition-all duration-300 relative overflow-hidden group">
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-moonstone/40 to-transparent group-hover:via-moonstone transition-all duration-500" />
+            
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-moonstone-dim border border-moonstone-border/30 flex items-center justify-center text-moonstone shrink-0 group-hover:scale-105 transition-transform">
+                  <FileText className="w-6 h-6" />
+                </div>
                 <div>
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-moonstone-dim border border-moonstone-border/30 flex items-center justify-center text-moonstone group-hover:scale-110 transition-transform">
-                      <FileText className="w-5 h-5" />
-                    </div>
+                  <div className="flex items-center gap-3 mb-1.5 flex-wrap">
+                    <h4 className="text-xl font-bold text-white group-hover:text-moonstone transition-colors font-poppins">
+                      Harol Maxilan — Curriculum Vitae
+                    </h4>
                     <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-moonstone">
-                      {resume.badge}
+                      AI/ML & Data Science
                     </span>
                   </div>
-
-                  <h4 className="text-lg font-bold text-white mb-1.5 group-hover:text-moonstone transition-colors font-poppins">
-                    {resume.name}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-6">
-                    {resume.description}
+                  <p className="text-sm text-white/70 leading-relaxed max-w-2xl">
+                    Unified technical CV covering Machine Learning, Deep Learning, Transformer NLP pipelines, Computer Vision, Data Engineering, and Academic Research.
                   </p>
                 </div>
+              </div>
 
+              <div className="flex items-center gap-3 shrink-0">
                 <a
-                  href={getAssetPath(resume.url)}
+                  href={getAssetPath(personal.cvUrl)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  download={resume.fileName}
-                  className="btn-shine inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-moonstone text-zinc-950 font-bold text-sm bg-moonstone hover:bg-white transition-all duration-300 shadow-[0_0_15px_rgba(224,231,255,0.2)]"
+                  download="Harol_Maxilan_CV.pdf"
+                  className="btn-shine inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-moonstone text-zinc-950 font-bold text-sm bg-moonstone hover:bg-white transition-all duration-300 shadow-[0_0_15px_rgba(224,231,255,0.2)]"
                 >
                   <Download className="w-4 h-4" />
-                  Download {resume.name}
+                  Download CV
                 </a>
               </div>
-            ))}
+            </div>
           </div>
         </motion.div>
       )}

@@ -148,24 +148,16 @@ export const portfolioData: PortfolioData = {
         tags: ["FastAPI", "Batch Processing", "Pytest (56 tests)", "ETL / Caching", "Data Integrity"]
       }
     ],
-    cvUrl: "/Maxilan_AI_ML_CV.pdf",
-    cvName: "AI & ML CV",
+    cvUrl: "/Harol_Maxilan_CV.pdf",
+    cvName: "Harol_Maxilan_CV.pdf",
     resumes: [
       {
-        id: "ai-ml-cv",
-        name: "AI & ML CV",
-        description: "Specialized technical resume highlighting deep learning architectures, computer vision models, NLP transformers (BERT/DistilBERT), and model evaluation.",
-        fileName: "Maxilan_AI_ML_CV.pdf",
-        url: "/Maxilan_AI_ML_CV.pdf",
-        badge: "AI & Deep Learning"
-      },
-      {
-        id: "data-eng-cv",
-        name: "Data Engineering CV",
-        description: "Specialized technical resume detailing automated batch pipelines, telemetry precomputation, ETL/ELT workflows, and Pytest test suites.",
-        fileName: "Maxilan_Data_Engineering_CV.pdf",
-        url: "/Maxilan_Data_Engineering_CV.pdf",
-        badge: "Data Engineering"
+        id: "harol-maxilan-cv",
+        name: "Harol Maxilan — Comprehensive CV",
+        description: "Unified technical CV combining Machine Learning, Deep Learning, Transformer NLP, Computer Vision, Data Engineering pipelines, and Academic Research.",
+        fileName: "Harol_Maxilan_CV.pdf",
+        url: "/Harol_Maxilan_CV.pdf",
+        badge: "AI / ML & Data Science"
       }
     ],
   },

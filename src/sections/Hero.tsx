@@ -120,25 +120,14 @@ const Hero: React.FC = () => {
           </a>
 
           <a
-            href={getAssetPath("/Maxilan_AI_ML_CV.pdf")}
+            href={getAssetPath(personal.cvUrl || "/Harol_Maxilan_CV.pdf")}
             target="_blank"
             rel="noopener noreferrer"
-            download="Maxilan_AI_ML_CV.pdf"
+            download="Harol_Maxilan_CV.pdf"
             className="btn-shine inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-white/20 text-white/90 font-bold text-sm sm:text-base bg-white/5 hover:bg-white hover:text-zinc-950 transition-all duration-300"
           >
             <FileText className="w-4 h-4 text-moonstone" />
-            AI & ML CV
-          </a>
-
-          <a
-            href={getAssetPath("/Maxilan_Data_Engineering_CV.pdf")}
-            target="_blank"
-            rel="noopener noreferrer"
-            download="Maxilan_Data_Engineering_CV.pdf"
-            className="btn-shine inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-white/20 text-white/90 font-bold text-sm sm:text-base bg-white/5 hover:bg-white hover:text-zinc-950 transition-all duration-300"
-          >
-            <FileText className="w-4 h-4 text-moonstone" />
-            Data Engineering CV
+            Download CV
           </a>
 
           <a
